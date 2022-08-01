@@ -1,5 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
+import Cta from '../Cta'
 
 type HeroProps = {
   image: {
@@ -41,12 +42,14 @@ function Hero({ image }: HeroProps) {
           user-friendly applications. I&apos;m currently looking for some great
           people to work with and learn a lot from.
         </p>
-        <a
-          href="#contact"
-          className="mx-auto w-max rounded-md bg-sky-blue py-2 px-3 lg:mx-0"
-        >
-          Contact me
-        </a>
+        <Cta
+          className="
+          mx-auto hidden w-max
+          md:inline
+          lg:mx-0"
+          destination="#contact"
+          text="Contact me"
+        />
       </article>
       <div
         className="

@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { Twirl as Hamburger } from 'hamburger-react'
 import Nav from './Nav'
 import Logo from './Logo'
+import Cta from '../Cta'
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
@@ -15,12 +16,11 @@ function Navbar() {
       >
         <Logo />
         <Nav isOpen={isOpen} />
-        <a
-          href="#contact"
-          className="ml-auto hidden rounded-md bg-sky-400 py-2 px-3 text-sm text-dark-grey md:inline"
-        >
-          Contact me
-        </a>
+        <Cta
+          className="ml-auto hidden md:inline"
+          destination="#contact"
+          text="Contact me"
+        />
         <div className="md:hidden">
           <Hamburger
             rounded
