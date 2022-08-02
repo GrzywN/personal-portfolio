@@ -16,18 +16,31 @@ module.exports = {
         'sky-blue': '#38bdf8',
         orange: '#f87238',
       },
-      // width: {
-      //   "full-container": "90rem",
-      //   "padding-container": "69.375rem",
-      // },
       maxWidth: {
         'full-container': '90rem',
         'padding-container': '69.375rem',
       },
+      minHeight: {
+        'padding-container': '50.625rem',
+      },
       backgroundImage: {
-        'yellow-circles': 'url("/backgrounds/circle-scatter-haikei.svg")',
-        'bottom-blue-waves': 'url("/backgrounds/layered-waves-haikei.svg")',
-        'upper-wave': 'url("/backgrounds/wave-haikei.svg")',
+        hero: 'url("/backgrounds/wave-haikei.svg"),url("/backgrounds/blob-hero.svg")',
+        'hero-lg':
+          'url("/backgrounds/wave-haikei.svg"),url("/backgrounds/blob-hero.svg")',
+        about: 'url("/backgrounds/blob-about.svg")',
+        'about-lg': 'url("/backgrounds/blob-about.svg")',
+      },
+      backgroundSize: {
+        hero: 'cover, 69.375rem',
+        'hero-lg': 'cover, 69.375rem',
+        about: 'cover',
+        'about-lg': '69.375rem',
+      },
+      backgroundPosition: {
+        hero: 'center, center',
+        'hero-lg': 'center, right',
+        about: 'center',
+        'about-lg': 'left',
       },
       transitionDuration: {
         400: '400ms',
@@ -35,4 +48,4 @@ module.exports = {
     },
   },
   plugins: [],
-}
+};

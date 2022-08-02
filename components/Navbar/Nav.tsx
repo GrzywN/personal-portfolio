@@ -1,9 +1,9 @@
-import React from 'react'
-import NavItem from './NavItem'
+import React from 'react';
+import NavItem from './NavItem';
 
 type NavProps = {
-  isOpen: boolean
-}
+  isOpen: boolean;
+};
 
 function Nav({ isOpen }: NavProps) {
   return (
@@ -19,7 +19,7 @@ function Nav({ isOpen }: NavProps) {
         <NavItem title="Blog" destination="#blog" index="03" />
       </ul>
     </nav>
-  )
+  );
 }
 
-export default Nav
+export default Nav;

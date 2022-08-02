@@ -1,20 +1,20 @@
-import React from 'react'
-import Image from 'next/image'
-import Cta from '../Cta'
+import React from 'react';
+import Image from 'next/image';
+import Cta from '../Cta';
 
 type HeroProps = {
   image: {
-    src: string
-    width: number
-    height: number
-  }
-}
+    src: string;
+    width: number;
+    height: number;
+  };
+};
 
 function Hero({ image }: HeroProps) {
   return (
     <div
       className="
-      grid h-full max-h-[50.625rem] max-w-full place-items-center text-center
+      grid h-full max-w-padding-container place-items-center px-8 text-center
       md:gap-16
       lg:grid-cols-2 lg:gap-4 lg:text-start"
     >
@@ -44,8 +44,7 @@ function Hero({ image }: HeroProps) {
         </p>
         <Cta
           className="
-          mx-auto hidden w-max
-          md:inline
+          mx-auto w-max
           lg:mx-0"
           destination="#contact"
           text="Contact me"
@@ -60,7 +59,7 @@ function Hero({ image }: HeroProps) {
         <Image src={image} alt="" />
       </div>
     </div>
-  )
+  );
 }
 
-export default Hero
+export default Hero;

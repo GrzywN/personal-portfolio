@@ -1,18 +1,25 @@
-import React from 'react'
+import React from 'react';
 
 type SectionProps = {
-  children: React.ReactNode
-}
+  className?: string;
+  children: React.ReactNode;
+};
 
-function Section({ children }: SectionProps) {
+function Section({ className, children }: SectionProps) {
   return (
-    <section
-      className="
-      relative grid h-screen max-w-padding-container place-items-center"
-    >
-      {children}
+    <section className={`${className} w-full bg-no-repeat`}>
+      <div
+        className="
+        relative mx-auto grid min-h-screen max-w-padding-container place-items-center lg:min-h-padding-container"
+      >
+        {children}
+      </div>
     </section>
-  )
+  );
 }
 
-export default Section
+Section.defaultProps = {
+  className: '',
+};
+
+export default Section;

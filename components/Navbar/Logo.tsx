@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 function Logo() {
   return (
@@ -9,7 +9,7 @@ function Logo() {
     >
       Karol Binkowski
     </h1>
-  )
+  );
 }
 
-export default Logo
+export default Logo;

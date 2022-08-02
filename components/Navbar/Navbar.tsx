@@ -1,11 +1,11 @@
-import React, { useState } from 'react'
-import { Twirl as Hamburger } from 'hamburger-react'
-import Nav from './Nav'
-import Logo from './Logo'
-import Cta from '../Cta'
+import React, { useState } from 'react';
+import { Twirl as Hamburger } from 'hamburger-react';
+import Nav from './Nav';
+import Logo from './Logo';
+import Cta from '../Cta';
 
 function Navbar() {
-  const [isOpen, setIsOpen] = useState(false)
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
     <header className="fixed top-4 z-50 grid w-full place-items-center px-8">
@@ -32,7 +32,7 @@ function Navbar() {
         </div>
       </div>
     </header>
-  )
+  );
 }
 
-export default Navbar
+export default Navbar;

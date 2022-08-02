@@ -1,11 +1,11 @@
-import React from 'react'
-import Link from 'next/link'
+import React from 'react';
+import Link from 'next/link';
 
 type NavItemProps = {
-  index: string
-  title: string
-  destination: string
-}
+  index: string;
+  title: string;
+  destination: string;
+};
 
 function NavItem({ index, title, destination }: NavItemProps) {
   return (
@@ -19,7 +19,7 @@ function NavItem({ index, title, destination }: NavItemProps) {
         </>
       </Link>
     </li>
-  )
+  );
 }
 
-export default NavItem
+export default NavItem;

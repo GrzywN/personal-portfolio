@@ -1,17 +1,17 @@
-import React from 'react'
+import React from 'react';
 
 type ContainerProps = {
-  children: React.ReactNode
-}
+  children: React.ReactNode;
+};
 
 function Container({ children }: ContainerProps) {
   return (
-    <div className="min-h-screen w-full bg-dark-grey bg-upper-wave bg-cover px-8">
-      <main className="mx-auto flex max-w-full-container flex-col items-center justify-between">
+    <div className="min-h-screen w-full">
+      <main className="mx-auto flex flex-col items-center justify-between gap-48">
         {children}
       </main>
     </div>
-  )
+  );
 }
 
-export default Container
+export default Container;
