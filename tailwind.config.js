@@ -29,12 +29,14 @@ module.exports = {
           'url("/backgrounds/wave-haikei.svg"),url("/backgrounds/blob-hero.svg")',
         about: 'url("/backgrounds/blob-about.svg")',
         'about-lg': 'url("/backgrounds/blob-about.svg")',
+        portfolio: 'url("/backgrounds/wave-portfolio.svg")',
       },
       backgroundSize: {
         hero: 'cover, 69.375rem',
         'hero-lg': 'cover, 69.375rem',
         about: 'cover',
         'about-lg': '69.375rem',
+        portfolio: 'cover',
       },
       backgroundPosition: {
         hero: 'center, center',

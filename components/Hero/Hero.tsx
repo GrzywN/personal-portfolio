@@ -2,15 +2,21 @@ import React from 'react';
 import Image from 'next/image';
 import Cta from '../Cta';
 
+import type { HeroFields } from '../../types/content/Hero';
+
 type HeroProps = {
   image: {
     src: string;
     width: number;
     height: number;
   };
+  content: HeroFields;
 };
 
-function Hero({ image }: HeroProps) {
+function Hero({ image, content }: HeroProps) {
+  const { title, paragraph, cta } = content;
+  const splitTitles = title.split('.', 2).map((e) => `${e.trim()}.`);
+
   return (
     <div
       className="
@@ -29,25 +35,23 @@ function Hero({ image }: HeroProps) {
           text-2xl font-extrabold
           md:text-5xl"
         >
-          <span className="text-white">Hi, I&apos;m Karol.</span>
+          <span className="text-white">{splitTitles[0]}</span>
           <br />
-          <span className="text-sky-blue">I&apos;m a web developer.</span>
+          <span className="text-sky-blue">{splitTitles[1]}</span>
         </h2>
         <p
           className="
           max-w-[50ch] text-sm leading-relaxed text-gray-300 
           md:text-lg"
         >
-          I&apos;m a software engineer with a passion for building beautiful,
-          user-friendly applications. I&apos;m currently looking for some great
-          people to work with and learn a lot from.
+          {paragraph}
         </p>
         <Cta
           className="
           mx-auto w-max
           lg:mx-0"
           destination="#contact"
-          text="Contact me"
+          text={cta}
         />
       </article>
       <div

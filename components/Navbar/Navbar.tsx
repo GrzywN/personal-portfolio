@@ -4,8 +4,16 @@ import Nav from './Nav';
 import Logo from './Logo';
 import Cta from '../Cta';
 
-function Navbar() {
+import type { NavbarFields } from '../../types/content/Navbar';
+
+type NavbarProps = {
+  content: NavbarFields;
+};
+
+function Navbar({ content }: NavbarProps) {
   const [isOpen, setIsOpen] = useState(false);
+
+  const { cta } = content;
 
   return (
     <header className="fixed top-4 z-50 grid w-full place-items-center px-8">
@@ -15,11 +23,11 @@ function Navbar() {
         backdrop-blur-xl"
       >
         <Logo />
-        <Nav isOpen={isOpen} />
+        <Nav isOpen={isOpen} content={content} />
         <Cta
           className="ml-auto hidden md:inline"
           destination="#contact"
-          text="Contact me"
+          text={cta}
         />
         <div className="md:hidden">
           <Hamburger

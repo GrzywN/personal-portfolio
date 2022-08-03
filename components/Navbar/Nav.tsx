@@ -1,11 +1,16 @@
 import React from 'react';
 import NavItem from './NavItem';
 
+import type { NavbarFields } from '../../types/content/Navbar';
+
 type NavProps = {
   isOpen: boolean;
+  content: NavbarFields;
 };
 
-function Nav({ isOpen }: NavProps) {
+function Nav({ isOpen, content }: NavProps) {
+  const { about, blog, portfolio } = content;
+
   return (
     <nav
       className={`${isOpen ? 'scale-x-100 opacity-100' : 'scale-x-0 opacity-0'} 
@@ -14,9 +19,9 @@ function Nav({ isOpen }: NavProps) {
       id="primary-navigation"
     >
       <ul className="flex flex-col gap-8 text-xl text-white sm:text-3xl md:flex-row md:text-base">
-        <NavItem title="About" destination="#about" index="01" />
-        <NavItem title="Projects" destination="#projects" index="02" />
-        <NavItem title="Blog" destination="#blog" index="03" />
+        <NavItem title={about} destination="#about" index="01" />
+        <NavItem title={portfolio} destination="#projects" index="02" />
+        <NavItem title={blog} destination="#blog" index="03" />
       </ul>
     </nav>
   );

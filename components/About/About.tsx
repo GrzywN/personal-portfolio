@@ -2,15 +2,21 @@ import React from 'react';
 import Image from 'next/image';
 import Cta from '../Cta';
 
+import type { AboutFields } from '../../types/content/About';
+
 type AboutProps = {
   image: {
     src: string;
     width: number;
     height: number;
   };
+  content: AboutFields;
 };
 
-function About({ image }: AboutProps) {
+function About({ content, image }: AboutProps) {
+  const { title, paragraph, cta } = content;
+  const paragraphs = paragraph.split('\n').map((e) => e.trim());
+
   return (
     <div
       className="
@@ -29,34 +35,22 @@ function About({ image }: AboutProps) {
           md:text-5xl
           lg:text-7xl"
         >
-          <span className="text-white">About me</span>
+          <span className="text-white">{title}</span>
         </h2>
         <p
           className="
           grid max-w-[50ch] gap-4 text-sm leading-relaxed text-gray-300 
           md:text-lg"
         >
-          <span>
-            I&apos;m a junior front-end developer looking for a new role in an
-            exciting company. I focus on writing accessible HTML, using modern
-            CSS practices and writing clean JavaScript.
-          </span>
-          <span>
-            When writing JavaScript code I mostly use React, TypeScript and
-            Tailwind CSS, but I can adapt to whatever tools are required.
-          </span>
-          <span>
-            I&apos;m based in Częstochowa, Poland, but I&apos;m happy working
-            remotly too. When I&apos;m not coding you&apos;ll find me outdoors.
-            I love being out in nature whether that&apos;s going for a walk,
-            biking, reading books or just hanging out with my friends.
-          </span>
+          {paragraphs.map((span) => (
+            <span key={span}>{span}</span>
+          ))}
         </p>
         <Cta
           className="
           mx-auto w-fit
           lg:mx-0"
-          text="More about me here"
+          text={cta}
           destination="/about"
         />
       </article>
