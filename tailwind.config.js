@@ -24,9 +24,9 @@ module.exports = {
         'padding-container': '50.625rem',
       },
       backgroundImage: {
-        hero: 'url("/backgrounds/wave-haikei.svg"),url("/backgrounds/blob-hero.svg")',
+        hero: 'url("/backgrounds/wave-hero.svg"),url("/backgrounds/blob-hero.svg")',
         'hero-lg':
-          'url("/backgrounds/wave-haikei.svg"),url("/backgrounds/blob-hero.svg")',
+          'url("/backgrounds/wave-hero.svg"),url("/backgrounds/blob-hero.svg")',
         about: 'url("/backgrounds/blob-about.svg")',
         'about-lg': 'url("/backgrounds/blob-about.svg")',
         portfolio: 'url("/backgrounds/wave-portfolio.svg")',

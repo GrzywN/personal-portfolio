@@ -1,27 +1,41 @@
 import React from 'react';
-import Link from 'next/link';
 import Image from 'next/image';
 
-import pizzeria from '/public/projects/pizzeria.png';
+import type { ContentfulImage } from '../../types/ContentfulImage';
 
-function Card() {
+type CardProps = {
+  title: string;
+  paragraph: string;
+  image: ContentfulImage;
+  liveSiteUrl: string;
+  sourceUrl: string;
+};
+
+function Card({ title, paragraph, image, liveSiteUrl, sourceUrl }: CardProps) {
+  const imageSrc = `https:${image.fields.file.url}`;
+  const imageWidth = image.fields.file.details.image.width;
+  const imageHeight = image.fields.file.details.image.height;
+
   return (
-    <figure className="max-w-xs rounded-lg bg-light-grey shadow-md">
-      <Image className="rounded-t-lg" src={pizzeria} alt="" />
-      <figcaption className="px-5 pt-5">
-        <Link href="/">
-          <h3 className="mb-2 text-2xl font-bold tracking-tight text-white">
-            Pizzeria u Karola
-          </h3>
-        </Link>
-        <p className="mb-3 font-normal text-gray-300">
-          A simple pizzeria website made with HTML, CSS and JavaScript. It uses
-          libraries like Leaflet.js and Splide.js to create a responsive slider.
-        </p>
+    <figure className="grid max-w-xs gap-6 rounded-lg bg-light-grey/60 pb-6 shadow-xl backdrop-blur-md">
+      <div className="overflow-hidden rounded-t-lg">
+        <Image
+          className="scale-[1.025] rounded-t-lg transition-transform duration-400 ease-in-out hover:scale-110"
+          src={imageSrc}
+          width={imageWidth}
+          height={imageHeight}
+          alt=""
+        />
+      </div>
+      <figcaption className="px-5">
+        <h3 className="mb-2 text-2xl font-bold tracking-tight text-white">
+          {title}
+        </h3>
+        <p className="mb-3 font-normal text-gray-300">{paragraph}</p>
       </figcaption>
-      <div className="flex justify-center gap-4 px-5 pb-5">
+      <div className="flex items-end justify-center gap-4 px-5">
         <a
-          href="/link"
+          href={liveSiteUrl}
           className="inline-flex items-center gap-4 rounded-lg bg-white py-2 px-3 text-center text-sm font-medium text-light-grey"
         >
           <svg
@@ -39,7 +53,7 @@ function Card() {
           Live demo
         </a>
         <a
-          href="/link"
+          href={sourceUrl}
           className="inline-flex items-center gap-4 rounded-lg bg-dark-grey py-2 px-3 text-center text-sm font-medium text-white"
         >
           <svg
