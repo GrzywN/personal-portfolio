@@ -43,7 +43,7 @@ function Home({ content }: any) {
         <Section className="bg-about lg:bg-about-lg">
           <About content={content[ContentType.ABOUT]} image={hiking} />
         </Section>
-        <Section className="bg-portfolio pt-[30rem]">
+        <Section className="md:bg-portfolio">
           <Portfolio
             headerContent={content[ContentType.PORTFOLIO]}
             itemsContent={content[ContentType.PORTFOLIO_ITEMS]}

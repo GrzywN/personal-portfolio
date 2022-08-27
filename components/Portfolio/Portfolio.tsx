@@ -17,7 +17,7 @@ function Portfolio({ headerContent, itemsContent }: PortfolioProps) {
   return (
     <div
       className="
-      grid h-full max-w-padding-container place-items-center gap-16 px-8 text-center"
+      flex h-full min-h-[200vh] max-w-padding-container flex-col items-center justify-center gap-16 px-8 text-center"
     >
       <article
         className="
