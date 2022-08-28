@@ -20,8 +20,8 @@ function Nav({ isOpen, content }: NavProps) {
     >
       <ul className="flex flex-col gap-8 text-xl text-white sm:text-3xl md:flex-row md:text-base">
         <NavItem title={about} destination="#about" index="01" />
-        <NavItem title={portfolio} destination="#projects" index="02" />
-        <NavItem title={blog} destination="#blog" index="03" />
+        <NavItem title={portfolio} destination="#portfolio" index="02" />
+        <NavItem title={blog} destination="/blog" index="03" />
       </ul>
     </nav>
   );

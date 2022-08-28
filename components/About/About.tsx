@@ -5,6 +5,7 @@ import Cta from '../Cta';
 import type { AboutFields } from '../../types/content/About';
 
 type AboutProps = {
+  id: string;
   image: {
     src: string;
     width: number;
@@ -13,7 +14,7 @@ type AboutProps = {
   content: AboutFields;
 };
 
-function About({ content, image }: AboutProps) {
+function About({ id, content, image }: AboutProps) {
   const { title, paragraph, cta } = content;
   const paragraphs = paragraph.split('\n').map((e) => e.trim());
 
@@ -22,6 +23,7 @@ function About({ content, image }: AboutProps) {
       className="
       grid h-full max-h-[50.625rem] max-w-full place-items-center text-center
       lg:grid-cols-2 lg:gap-8 lg:text-start"
+      id={id}
     >
       <article
         className="

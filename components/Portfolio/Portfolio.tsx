@@ -7,17 +7,19 @@ import type {
 } from '../../types/content/Portfolio';
 
 type PortfolioProps = {
+  id: string;
   headerContent: PortfolioFields;
   itemsContent: PortfolioItemFields[];
 };
 
-function Portfolio({ headerContent, itemsContent }: PortfolioProps) {
+function Portfolio({ id, headerContent, itemsContent }: PortfolioProps) {
   const { title, paragraph } = headerContent;
 
   return (
     <div
       className="
       flex h-full min-h-[200vh] max-w-padding-container flex-col items-center justify-center gap-16 px-8 text-center"
+      id={id}
     >
       <article
         className="

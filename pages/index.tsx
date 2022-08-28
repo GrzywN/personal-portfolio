@@ -8,6 +8,7 @@ import Navbar from '../components/Navbar';
 import Container from '../components/Container';
 import About from '../components/About';
 import Portfolio from '../components/Portfolio';
+import Contact from '../components/Contact';
 
 import welcoming from '../public/illustrations/welcoming.svg';
 import hiking from '../public/illustrations/hiking.svg';
@@ -19,6 +20,7 @@ import type {
   PortfolioFields,
   PortfolioItemFields,
 } from '../types/content/Portfolio';
+import type { ContactFields } from '../types/content/Contact';
 
 enum ContentType {
   NAVBAR,
@@ -26,6 +28,7 @@ enum ContentType {
   ABOUT,
   PORTFOLIO,
   PORTFOLIO_ITEMS,
+  CONTACT,
 }
 
 function Home({ content }: any) {
@@ -38,16 +41,28 @@ function Home({ content }: any) {
       <Navbar content={content[ContentType.NAVBAR]} />
       <Container>
         <Section className="bg-hero lg:bg-hero-lg">
-          <Hero content={content[ContentType.HERO]} image={welcoming} />
+          <Hero
+            content={content[ContentType.HERO]}
+            image={welcoming}
+            id="hero"
+          />
         </Section>
         <Section className="bg-about lg:bg-about-lg">
-          <About content={content[ContentType.ABOUT]} image={hiking} />
+          <About
+            content={content[ContentType.ABOUT]}
+            image={hiking}
+            id="about"
+          />
         </Section>
         <Section className="md:bg-portfolio">
           <Portfolio
             headerContent={content[ContentType.PORTFOLIO]}
             itemsContent={content[ContentType.PORTFOLIO_ITEMS]}
+            id="portfolio"
           />
+        </Section>
+        <Section>
+          <Contact content={content[ContentType.CONTACT]} id="contact" />
         </Section>
       </Container>
     </>
@@ -60,28 +75,33 @@ async function getStaticProps({ locale }: { locale: string }) {
     accessToken: process.env.CONTENTFUL_ACCESS_TOKEN!,
   });
 
-  const [navbar, hero, about, portfolio, portfolioItems] = await Promise.all([
-    client.getEntries({
-      content_type: 'navbar',
-      locale,
-    }),
-    client.getEntries({
-      content_type: 'hero',
-      locale,
-    }),
-    client.getEntries({
-      content_type: 'about',
-      locale,
-    }),
-    client.getEntries({
-      content_type: 'portfolio',
-      locale,
-    }),
-    client.getEntries({
-      content_type: 'portfolioItem',
-      locale,
-    }),
-  ]);
+  const [navbar, hero, about, portfolio, portfolioItems, contact] =
+    await Promise.all([
+      client.getEntries({
+        content_type: 'navbar',
+        locale,
+      }),
+      client.getEntries({
+        content_type: 'hero',
+        locale,
+      }),
+      client.getEntries({
+        content_type: 'about',
+        locale,
+      }),
+      client.getEntries({
+        content_type: 'portfolio',
+        locale,
+      }),
+      client.getEntries({
+        content_type: 'portfolioItem',
+        locale,
+      }),
+      client.getEntries({
+        content_type: 'contact',
+        locale,
+      }),
+    ]);
 
   const content = [];
   content[ContentType.NAVBAR] = navbar.items[0].fields as NavbarFields;
@@ -91,6 +111,7 @@ async function getStaticProps({ locale }: { locale: string }) {
   content[ContentType.PORTFOLIO_ITEMS] = portfolioItems.items.map(
     (e) => e.fields
   ) as PortfolioItemFields[];
+  content[ContentType.CONTACT] = contact.items[0].fields as ContactFields;
 
   return {
     props: {

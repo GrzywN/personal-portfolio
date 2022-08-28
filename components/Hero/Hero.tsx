@@ -5,6 +5,7 @@ import Cta from '../Cta';
 import type { HeroFields } from '../../types/content/Hero';
 
 type HeroProps = {
+  id: string;
   image: {
     src: string;
     width: number;
@@ -13,7 +14,7 @@ type HeroProps = {
   content: HeroFields;
 };
 
-function Hero({ image, content }: HeroProps) {
+function Hero({ id, image, content }: HeroProps) {
   const { title, paragraph, cta } = content;
   const splitTitles = title.split('.', 2).map((e) => `${e.trim()}.`);
 
@@ -23,6 +24,7 @@ function Hero({ image, content }: HeroProps) {
       grid h-full max-w-padding-container place-items-center px-8 text-center
       md:gap-16
       lg:grid-cols-2 lg:gap-4 lg:text-start"
+      id={id}
     >
       <article
         className="
