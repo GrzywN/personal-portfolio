@@ -1,7 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 
-import type { ContentfulImage } from '../../types/ContentfulImage';
+import type { ContentfulImage } from '../../types/content/ContentfulImage';
 
 type CardProps = {
   title: string;

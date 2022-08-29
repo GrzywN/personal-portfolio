@@ -1,7 +1,7 @@
 import React from 'react';
 import ContactForm from '../ContactForm';
 
-import type { ContactFields } from '../../types/content/Contact';
+import type { ContactFields } from '../../types/content/models';
 
 type ContactProps = {
   id: string;

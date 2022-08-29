@@ -11,4 +11,4 @@ export type PortfolioItemFields = {
   image: ContentfulImage;
   liveSiteUrl: string;
   sourceUrl: string;
-};
+}[];

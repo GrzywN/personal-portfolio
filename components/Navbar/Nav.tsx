@@ -1,7 +1,7 @@
 import React from 'react';
 import NavItem from './NavItem';
 
-import type { NavbarFields } from '../../types/content/Navbar';
+import type { NavbarFields } from '../../types/content/models';
 
 type NavProps = {
   isOpen: boolean;

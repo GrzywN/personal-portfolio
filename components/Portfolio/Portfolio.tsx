@@ -4,12 +4,12 @@ import Card from './Card';
 import type {
   PortfolioFields,
   PortfolioItemFields,
-} from '../../types/content/Portfolio';
+} from '../../types/content/models';
 
 type PortfolioProps = {
   id: string;
   headerContent: PortfolioFields;
-  itemsContent: PortfolioItemFields[];
+  itemsContent: PortfolioItemFields;
 };
 
 function Portfolio({ id, headerContent, itemsContent }: PortfolioProps) {

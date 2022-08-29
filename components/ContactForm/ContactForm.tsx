@@ -7,7 +7,7 @@ import Label from './Label';
 import ErrorLabel from './ErrorLabel';
 import Input from './Input';
 
-import type { ContactFields } from '../../types/content/Contact';
+import type { ContactFields } from '../../types/content/models';
 
 type ContactFormProps = {
   content: ContactFields;

@@ -4,7 +4,7 @@ import Nav from './Nav';
 import Logo from './Logo';
 import Cta from '../Cta';
 
-import type { NavbarFields } from '../../types/content/Navbar';
+import type { NavbarFields } from '../../types/content/models';
 
 type NavbarProps = {
   content: NavbarFields;

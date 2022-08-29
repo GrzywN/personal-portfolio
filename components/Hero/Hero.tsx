@@ -2,7 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 import Cta from '../Cta';
 
-import type { HeroFields } from '../../types/content/Hero';
+import type { HeroFields } from '../../types/content/models';
 
 type HeroProps = {
   id: string;
