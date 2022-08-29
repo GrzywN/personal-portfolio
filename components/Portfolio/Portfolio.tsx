@@ -18,7 +18,7 @@ function Portfolio({ id, headerContent, itemsContent }: PortfolioProps) {
   return (
     <div
       className="
-      flex h-full min-h-[200vh] max-w-padding-container flex-col items-center justify-center gap-16 px-8 text-center"
+      flex h-full min-h-[max(135rem,200vh)] max-w-padding-container flex-col items-center justify-center gap-16 px-8 text-center"
       id={id}
     >
       <article
