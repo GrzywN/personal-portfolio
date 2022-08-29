@@ -47,6 +47,9 @@ module.exports = {
       transitionDuration: {
         400: '400ms',
       },
+      borderRadius: {
+        'blob-contact': '30% 70% 44% 56% / 30% 30% 70% 70%',
+      },
     },
   },
   plugins: [],

@@ -19,7 +19,7 @@ function Input(props: InputProps) {
       className={`${
         error ? 'border-red-500' : 'border-gray-200 focus:border-gray-500'
       } 
-      block w-full appearance-none rounded-md border bg-gray-200 py-3 px-4 leading-tight text-gray-700 focus:bg-white focus:outline-none`}
+      block w-full appearance-none rounded-md border bg-gray-200 py-3 px-4 leading-tight text-gray-700 transition-colors duration-400 focus:bg-white focus:outline-none`}
       value={value}
       onChange={onChange}
       onBlur={onBlur}

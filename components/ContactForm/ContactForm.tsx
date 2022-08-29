@@ -46,12 +46,12 @@ function ContactForm({ content }: ContactFormProps) {
 
   return (
     <form
-      className="grid w-full max-w-lg gap-1 md:gap-6"
+      className="grid w-full max-w-lg gap-8"
       action="https://formsubmit.co/56ba29188e35a9bc8dd475cf7a096839"
       method="POST"
     >
-      <div className="grid gap-1 md:grid-cols-2 md:gap-6">
-        <div>
+      <div className="grid gap-8 md:grid-cols-2">
+        <div className="relative">
           <Label htmlFor="firstName">{firstName}</Label>
           <Input
             value={formik.values.firstName}
@@ -60,13 +60,13 @@ function ContactForm({ content }: ContactFormProps) {
             id="firstName"
             name="firstName"
             placeholder={firstNamePlaceholder}
-            error={!!formik.errors.firstName}
+            error={formik.touched.firstName! && !!formik.errors.firstName}
           />
           <ErrorLabel>
             {formik.touched.firstName && formik.errors.firstName}
           </ErrorLabel>
         </div>
-        <div>
+        <div className="relative">
           <Label htmlFor="lastName">{lastName}</Label>
           <Input
             value={formik.values.lastName}
@@ -75,14 +75,14 @@ function ContactForm({ content }: ContactFormProps) {
             id="lastName"
             name="lastName"
             placeholder={lastNamePlaceholder}
-            error={!!formik.errors.lastName}
+            error={formik.touched.lastName! && !!formik.errors.lastName}
           />
           <ErrorLabel>
             {formik.touched.lastName && formik.errors.lastName}
           </ErrorLabel>
         </div>
       </div>
-      <div>
+      <div className="relative">
         <Label htmlFor="email">{email}</Label>
         <Input
           value={formik.values.email}
@@ -92,11 +92,11 @@ function ContactForm({ content }: ContactFormProps) {
           name="email"
           type="email"
           placeholder={emailPlaceholder}
-          error={!!formik.errors.email}
+          error={formik.touched.email! && !!formik.errors.email}
         />
         <ErrorLabel>{formik.touched.email && formik.errors.email}</ErrorLabel>
       </div>
-      <div>
+      <div className="relative">
         <Label htmlFor="message">{message}</Label>
         <TextArea
           value={formik.values.message}
@@ -105,7 +105,7 @@ function ContactForm({ content }: ContactFormProps) {
           id="message"
           name="message"
           placeholder={messagePlaceholder}
-          error={!!formik.errors.message}
+          error={formik.touched.message! && !!formik.errors.message}
         />
         <ErrorLabel>
           {formik.touched.message && formik.errors.message}
@@ -119,7 +119,9 @@ function ContactForm({ content }: ContactFormProps) {
         />
         <input type="hidden" name="_template" value="table" />
       </div>
-      <Submit>{submit}</Submit>
+      <div className="mt-4">
+        <Submit>{submit}</Submit>
+      </div>
     </form>
   );
 }

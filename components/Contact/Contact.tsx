@@ -12,7 +12,7 @@ function Contact({ id, content }: ContactProps) {
   return (
     <div
       className="
-      flex h-full max-w-padding-container flex-col items-center gap-16 px-8 text-center"
+      flex h-full max-w-padding-container flex-col items-center gap-8 px-8 text-center md:gap-16"
       id={id}
     >
       <h2
@@ -22,7 +22,9 @@ function Contact({ id, content }: ContactProps) {
       >
         <span className="text-white">{content.title}</span>
       </h2>
-      <ContactForm content={content} />
+      <div className="md:rounded-blob-contact md:bg-light-grey md:p-24">
+        <ContactForm content={content} />
+      </div>
     </div>
   );
 }
