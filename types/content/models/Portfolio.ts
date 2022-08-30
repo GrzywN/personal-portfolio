@@ -3,12 +3,17 @@ import type { ContentfulImage } from '../ContentfulImage';
 export type PortfolioFields = {
   title: string;
   paragraph: string;
+  demo: string;
+  source: string;
 };
 
-export type PortfolioItemFields = {
+export type PortfolioItemField = {
   title: string;
   paragraph: string;
   image: ContentfulImage;
   liveSiteUrl: string;
   sourceUrl: string;
-}[];
+  technologiesUsed: string[];
+};
+
+export type PortfolioItemFields = PortfolioItemField[];

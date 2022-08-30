@@ -8,20 +8,22 @@ import type {
 
 type PortfolioProps = {
   id: string;
-  headerContent: PortfolioFields;
+  generalContent: PortfolioFields;
   itemsContent: PortfolioItemFields;
 };
 
-function Portfolio({ id, headerContent, itemsContent }: PortfolioProps) {
-  const { title, paragraph } = headerContent;
+function Portfolio({ id, generalContent, itemsContent }: PortfolioProps) {
+  const { title, paragraph } = generalContent;
 
   return (
     <div
       className="
-      flex h-full min-h-[max(135rem,200vh)] max-w-padding-container flex-col items-center justify-center gap-16 px-8 text-center"
+      flex h-full flex-col gap-16 py-32 px-8 text-center
+      md:py-48
+      lg:py-64"
       id={id}
     >
-      <article
+      <header
         className="
         grid gap-2 font-inter
         md:gap-4
@@ -29,29 +31,29 @@ function Portfolio({ id, headerContent, itemsContent }: PortfolioProps) {
       >
         <h2
           className="
-          text-2xl font-extrabold
-          md:text-5xl
+          text-4xl font-extrabold text-white
+          sm:text-5xl
+          md:text-6xl
           lg:text-7xl"
         >
-          <span className="text-white">{title}</span>
+          {title}
         </h2>
         <p
           className="
-          text-sm leading-relaxed text-gray-300 
+          text-sm text-gray-200
+          sm:text-base
           md:text-lg"
         >
           {paragraph}
         </p>
-      </article>
-      <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-        {itemsContent.map((item) => (
+      </header>
+      <div className="grid gap-20">
+        {itemsContent.map((item, index) => (
           <Card
             key={item.title}
-            title={item.title}
-            paragraph={item.paragraph}
-            image={item.image}
-            liveSiteUrl={item.liveSiteUrl}
-            sourceUrl={item.sourceUrl}
+            itemContent={item}
+            generalContent={generalContent}
+            reverseOrder={index % 2 === 1}
           />
         ))}
       </div>

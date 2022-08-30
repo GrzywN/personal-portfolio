@@ -46,9 +46,9 @@ function Home({ content }: HomeProps) {
         <Section className="bg-about lg:bg-about-lg">
           <About content={about} image={hiking} id="about" />
         </Section>
-        <Section className="md:bg-portfolio">
+        <Section skew skewedBgClass="bg-sky-blue">
           <Portfolio
-            headerContent={portfolio}
+            generalContent={portfolio}
             itemsContent={portfolioItems}
             id="portfolio"
           />

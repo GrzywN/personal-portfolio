@@ -3,14 +3,19 @@ import React from 'react';
 type SectionProps = {
   className?: string;
   children: React.ReactNode;
+  skew?: boolean;
+  skewedBgClass?: string;
 };
 
-function Section({ className, children }: SectionProps) {
+function Section({ className, children, skew, skewedBgClass }: SectionProps) {
+  const skewClasses = skew ? `-skew-y-6 ${skewedBgClass}` : '';
+
   return (
-    <section className={`${className} w-full bg-no-repeat`}>
+    <section className={`${className} relative w-full bg-no-repeat`}>
+      <div className={`${skewClasses} absolute inset-0`} />
       <div
-        className="relative
-        mx-auto grid min-h-screen max-w-padding-container place-items-center
+        className="
+        relative mx-auto grid min-h-screen max-w-padding-container place-items-center
         lg:min-h-padding-container"
       >
         {children}
@@ -21,6 +26,8 @@ function Section({ className, children }: SectionProps) {
 
 Section.defaultProps = {
   className: '',
+  skew: false,
+  skewedBgClass: '',
 };
 
 export default Section;

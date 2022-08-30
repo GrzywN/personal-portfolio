@@ -1,76 +1,76 @@
 import React from 'react';
 import Image from 'next/image';
 
-import type { ContentfulImage } from '../../types/content/ContentfulImage';
+import { ChipList } from '../Chips';
+import { DemoButton, GitHubButton } from '../Buttons';
+
+import type {
+  PortfolioFields,
+  PortfolioItemField,
+} from '../../types/content/models';
 
 type CardProps = {
-  title: string;
-  paragraph: string;
-  image: ContentfulImage;
-  liveSiteUrl: string;
-  sourceUrl: string;
+  generalContent: PortfolioFields;
+  itemContent: PortfolioItemField;
+  reverseOrder: boolean;
 };
 
-function Card({ title, paragraph, image, liveSiteUrl, sourceUrl }: CardProps) {
+function Card({ generalContent, itemContent, reverseOrder }: CardProps) {
+  const { title, paragraph, image, liveSiteUrl, sourceUrl, technologiesUsed } =
+    itemContent;
+  const { demo, source } = generalContent;
+
   const imageSrc = `https:${image.fields.file.url}`;
   const imageWidth = image.fields.file.details.image.width;
   const imageHeight = image.fields.file.details.image.height;
 
   return (
-    <figure className="grid max-w-xs gap-6 rounded-lg bg-light-grey/60 pb-6 shadow-xl backdrop-blur-md">
-      <div className="overflow-hidden rounded-t-lg">
-        <Image
-          className="scale-[1.025] rounded-t-lg transition-transform duration-400 ease-in-out hover:scale-110"
-          src={imageSrc}
-          width={imageWidth}
-          height={imageHeight}
-          alt=""
-        />
-      </div>
-      <figcaption className="px-5">
-        <h3 className="mb-2 text-2xl font-bold tracking-tight text-white">
+    <section
+      className={`
+      ${reverseOrder ? 'lg:flex-row-reverse' : 'lg:flex-row'}
+      grid max-w-md gap-8 rounded-2xl bg-white p-4 shadow-xl
+      md:p-8
+      lg:flex lg:max-w-full lg:flex-row lg:gap-16 lg:p-12`}
+      title={title}
+    >
+      <Image
+        className="rounded"
+        src={imageSrc}
+        width={imageWidth}
+        height={imageHeight}
+      />
+      <div
+        className="
+        flex w-full flex-col gap-4 text-start
+        md:gap-6 lg:gap-8"
+      >
+        <h3
+          className="
+          text-3xl font-extrabold tracking-tight text-dark-grey
+          sm:text-4xl
+          md:text-5xl"
+        >
           {title}
         </h3>
-        <p className="mb-3 font-normal text-gray-300">{paragraph}</p>
-      </figcaption>
-      <div className="flex items-end justify-center gap-4 px-5">
-        <a
-          href={liveSiteUrl}
-          className="inline-flex items-center gap-4 rounded-lg bg-white py-2 px-3 text-center text-sm font-medium text-light-grey"
+        <ChipList items={technologiesUsed} />
+        <p
+          className="
+          text-sm font-normal text-light-grey
+          sm:text-base
+          lg:text-lg"
         >
-          <svg
-            width="24"
-            height="24"
-            xmlns="http://www.w3.org/2000/svg"
-            fillRule="evenodd"
-            clipRule="evenodd"
-          >
-            <path
-              fill="#27272a"
-              d="M24 8.2c0-.318-.126-.623-.351-.849-.226-.225-.531-.351-.849-.351h-6.6c-.318 0-.623.126-.849.351-.225.226-.351.531-.351.849v13.6c0 .318.126.623.351.849.226.225.531.351.849.351h6.6c.318 0 .623-.126.849-.351.225-.226.351-.531.351-.849v-13.6zm-11 14.8h-8l2.599-3h5.401v3zm6.5-1c-.553 0-1-.448-1-1s.447-1 1-1c.552 0 .999.448.999 1s-.447 1-.999 1zm3.5-3v-9.024h-7v9.024h7zm-2-14h-2v-2h-17v13h11v2h-13v-17h21v4zm-.5 4c.276 0 .5-.224.5-.5s-.224-.5-.5-.5h-2c-.276 0-.5.224-.5.5s.224.5.5.5h2z"
-            />
-          </svg>
-          Live demo
-        </a>
-        <a
-          href={sourceUrl}
-          className="inline-flex items-center gap-4 rounded-lg bg-dark-grey py-2 px-3 text-center text-sm font-medium text-white"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-          >
-            <path
-              fill="#fff"
-              d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
-            />
-          </svg>
-          Source
-        </a>
+          {paragraph}
+        </p>
+        <ul className="mt-auto flex gap-4 pt-8">
+          <li>
+            <DemoButton href={liveSiteUrl} text={demo} />
+          </li>
+          <li>
+            <GitHubButton href={sourceUrl} text={source} />
+          </li>
+        </ul>
       </div>
-    </figure>
+    </section>
   );
 }
 
