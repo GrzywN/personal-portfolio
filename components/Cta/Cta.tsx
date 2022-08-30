@@ -11,7 +11,7 @@ function Cta({ text, destination, className = '' }: CtaProps) {
     <a
       href={destination}
       className={`${className} 
-      rounded-md bg-sky-400 py-2 px-3 text-sm font-bold text-white`}
+      rounded-md bg-sky-400 py-2 px-3 text-dark-grey`}
     >
       {text}
     </a>

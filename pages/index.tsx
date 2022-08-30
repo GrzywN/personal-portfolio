@@ -10,9 +10,6 @@ import About from '../components/About';
 import Portfolio from '../components/Portfolio';
 import Contact from '../components/Contact';
 
-import welcoming from '../public/illustrations/welcoming.svg';
-import hiking from '../public/illustrations/hiking.svg';
-
 import type * as CmsModels from '../types/content/models';
 
 type ContentType = {
@@ -36,15 +33,14 @@ function Home({ content }: HomeProps) {
     <>
       <Head>
         <title>Karol Binkowski - Home</title>
-        <meta name="description" content="description" />
       </Head>
       <Navbar content={navbar} />
       <Container>
-        <Section className="bg-hero lg:bg-hero-lg">
-          <Hero content={hero} image={welcoming} id="hero" />
+        <Section className="bg-hero">
+          <Hero content={hero} id="hero" />
         </Section>
-        <Section className="bg-about lg:bg-about-lg">
-          <About content={about} image={hiking} id="about" />
+        <Section>
+          <About content={about} id="about" />
         </Section>
         <Section skew skewedBgClass="bg-sky-blue">
           <Portfolio

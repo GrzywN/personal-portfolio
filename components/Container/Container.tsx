@@ -6,11 +6,13 @@ type ContainerProps = {
 
 function Container({ children }: ContainerProps) {
   return (
-    <div className="min-h-screen w-full">
-      <main className="mx-auto flex flex-col items-center justify-between gap-48">
-        {children}
-      </main>
-    </div>
+    <main
+      className="
+      flex flex-col items-center justify-between gap-48
+      lg:gap-64"
+    >
+      {children}
+    </main>
   );
 }
 

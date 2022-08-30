@@ -18,7 +18,7 @@ function Portfolio({ id, generalContent, itemsContent }: PortfolioProps) {
   return (
     <div
       className="
-      flex h-full flex-col gap-16 py-32 px-8 text-center
+      flex h-full flex-col items-center gap-16 py-32 px-8 text-center
       md:py-48
       lg:py-64"
       id={id}

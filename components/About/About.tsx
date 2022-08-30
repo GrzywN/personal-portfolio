@@ -2,30 +2,28 @@ import React from 'react';
 import Image from 'next/image';
 import Cta from '../Cta';
 
+import imageHiking from '../../public/illustrations/hiking.svg';
+
 import type { AboutFields } from '../../types/content/models';
 
 type AboutProps = {
   id: string;
-  image: {
-    src: string;
-    width: number;
-    height: number;
-  };
   content: AboutFields;
 };
 
-function About({ id, content, image }: AboutProps) {
+function About({ id, content }: AboutProps) {
   const { title, paragraph, cta } = content;
   const paragraphs = paragraph.split('\n').map((e) => e.trim());
 
   return (
     <div
       className="
-      grid h-full max-h-[50.625rem] max-w-full place-items-center text-center
-      lg:grid-cols-2 lg:gap-8 lg:text-start"
+      grid max-w-padding-container items-center px-8 text-center
+      md:gap-16
+      lg:grid-cols-2 lg:gap-4 lg:text-start"
       id={id}
     >
-      <article
+      <div
         className="
         order-2 grid gap-4 font-inter
         md:gap-6
@@ -33,11 +31,11 @@ function About({ id, content, image }: AboutProps) {
       >
         <h2
           className="
-          text-2xl font-extrabold
+          text-2xl font-extrabold text-white
           md:text-5xl
           lg:text-7xl"
         >
-          <span className="text-white">{title}</span>
+          {title}
         </h2>
         <p
           className="
@@ -55,14 +53,14 @@ function About({ id, content, image }: AboutProps) {
           text={cta}
           destination="/about"
         />
-      </article>
+      </div>
       <div
         className="
         max-w-xs self-end
-        md:max-w-md 
-        lg:max-w-none lg:self-center"
+        rounded-blob-hero bg-light-grey
+        p-4 md:max-w-md lg:max-w-none lg:self-center"
       >
-        <Image src={image} alt="" />
+        <Image src={imageHiking} alt="" />
       </div>
     </div>
   );

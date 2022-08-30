@@ -38,6 +38,7 @@ function Card({ generalContent, itemContent, reverseOrder }: CardProps) {
         src={imageSrc}
         width={imageWidth}
         height={imageHeight}
+        alt={`${title} preview`}
       />
       <div
         className="

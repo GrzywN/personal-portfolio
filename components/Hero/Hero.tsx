@@ -2,31 +2,29 @@ import React from 'react';
 import Image from 'next/image';
 import Cta from '../Cta';
 
+import imageWelcoming from '../../public/illustrations/welcoming.svg';
+
 import type { HeroFields } from '../../types/content/models';
 
 type HeroProps = {
   id: string;
-  image: {
-    src: string;
-    width: number;
-    height: number;
-  };
   content: HeroFields;
 };
 
-function Hero({ id, image, content }: HeroProps) {
+function Hero({ id, content }: HeroProps) {
   const { title, paragraph, cta } = content;
   const splitTitles = title.split('.', 2).map((e) => `${e.trim()}.`);
 
   return (
-    <div
+    <section
       className="
-      grid h-full max-w-padding-container place-items-center px-8 text-center
+      mt-4 grid h-full max-w-padding-container place-items-center px-8 text-center
       md:gap-16
       lg:grid-cols-2 lg:gap-4 lg:text-start"
       id={id}
+      title={splitTitles[0]}
     >
-      <article
+      <div
         className="
         order-2 grid gap-4 font-inter
         md:gap-6
@@ -50,21 +48,21 @@ function Hero({ id, image, content }: HeroProps) {
         </p>
         <Cta
           className="
-          mx-auto w-max
+          mx-auto w-fit
           lg:mx-0"
           destination="#contact"
           text={cta}
         />
-      </article>
+      </div>
       <div
         className="
         max-w-xs self-end 
-        md:max-w-md 
-        lg:max-w-none"
+        rounded-blob-hero bg-light-grey p-4
+        md:max-w-md lg:max-w-none"
       >
-        <Image src={image} alt="" />
+        <Image src={imageWelcoming} alt="" />
       </div>
-    </div>
+    </section>
   );
 }
 

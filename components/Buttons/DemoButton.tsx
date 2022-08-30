@@ -12,7 +12,7 @@ function DemoButton({ href, text }: DemoButtonProps) {
       href={href}
       className="inline-flex items-center gap-4 rounded-lg border border-dark-grey bg-white py-2 px-3 text-center text-sm font-medium text-light-grey"
     >
-      <Image src="/icons/icon-demo.svg" width={24} height={24} />
+      <Image src="/icons/icon-demo.svg" width={24} height={24} alt="" />
       {text}
     </a>
   );

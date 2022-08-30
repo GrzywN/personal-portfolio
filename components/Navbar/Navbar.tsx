@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Twirl as Hamburger } from 'hamburger-react';
+
 import Nav from './Nav';
 import Logo from './Logo';
 import Cta from '../Cta';
@@ -19,13 +20,15 @@ function Navbar({ content }: NavbarProps) {
     <header className="fixed top-4 z-50 grid w-full place-items-center px-8">
       <div
         className="
-        flex h-16 w-full max-w-padding-container items-center justify-between rounded-md bg-light-grey/90 px-8 py-2 shadow-md
-        backdrop-blur-xl"
+        flex h-16 w-full max-w-padding-container items-center
+          justify-between rounded-md bg-light-grey/90 px-8 py-2 shadow-md backdrop-blur-xl"
       >
         <Logo />
         <Nav isOpen={isOpen} content={content} />
         <Cta
-          className="ml-auto hidden md:inline"
+          className="
+          ml-auto hidden
+          md:inline"
           destination="#contact"
           text={cta}
         />

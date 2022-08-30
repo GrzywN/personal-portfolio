@@ -24,28 +24,20 @@ module.exports = {
         'padding-container': '50.625rem',
       },
       backgroundImage: {
-        hero: 'url("/backgrounds/wave-hero.svg"),url("/backgrounds/blob-hero.svg")',
-        'hero-lg':
-          'url("/backgrounds/wave-hero.svg"),url("/backgrounds/blob-hero.svg")',
-        about: 'url("/backgrounds/blob-about.svg")',
-        'about-lg': 'url("/backgrounds/blob-about.svg")',
+        hero: 'url("/backgrounds/wave-hero.svg")',
       },
       backgroundSize: {
-        hero: 'cover, 69.375rem',
-        'hero-lg': 'cover, 69.375rem',
-        about: 'cover',
-        'about-lg': '69.375rem',
+        hero: 'cover',
       },
       backgroundPosition: {
-        hero: 'center, center',
-        'hero-lg': 'center, right',
-        about: 'center',
-        'about-lg': 'left',
+        hero: 'center',
       },
       transitionDuration: {
         400: '400ms',
       },
       borderRadius: {
+        'blob-hero': '43% 57% 46% 54% / 38% 50% 50% 62% ',
+        'blob-about': '30% 70% 74% 26% / 18% 50% 50% 82% ',
         'blob-contact': '30% 70% 44% 56% / 30% 30% 70% 70%',
       },
     },
