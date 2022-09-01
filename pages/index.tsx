@@ -35,11 +35,11 @@ function Home({ content }: HomeProps) {
         <title>Karol Binkowski - Home</title>
       </Head>
       <Navbar content={navbar} />
-      <Container>
+      <Container className="lg:bg-blobs lg:bg-no-repeat">
         <Section className="bg-hero">
           <Hero content={hero} id="hero" />
         </Section>
-        <Section>
+        <Section className="bg-about">
           <About content={about} id="about" />
         </Section>
         <Section skew skewedBgClass="bg-sky-blue">

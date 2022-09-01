@@ -2,7 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 import Cta from '../Cta';
 
-import imageHiking from '../../public/illustrations/hiking.svg';
+import imageFeelingProud from '../../public/illustrations/feeling_proud.svg';
 
 import type { AboutFields } from '../../types/content/models';
 
@@ -18,16 +18,16 @@ function About({ id, content }: AboutProps) {
   return (
     <div
       className="
-      grid max-w-padding-container items-center px-8 text-center
+      grid max-w-padding-container place-items-center px-8 text-center
       md:gap-16
-      lg:grid-cols-2 lg:gap-4 lg:text-start"
+      lg:grid-cols-2 lg:gap-24 lg:text-start"
       id={id}
     >
       <div
         className="
-        order-2 grid gap-4 font-inter
-        md:gap-6
-        lg:gap-8 lg:bg-transparent lg:p-0"
+        order-2 grid gap-4
+        font-inter
+        md:gap-6 lg:gap-8 lg:p-0"
       >
         <h2
           className="
@@ -40,7 +40,8 @@ function About({ id, content }: AboutProps) {
         <p
           className="
           grid max-w-[50ch] gap-4 text-sm leading-relaxed text-gray-300 
-          md:text-lg"
+          md:text-lg
+          lg:text-base"
         >
           {paragraphs.map((span) => (
             <span key={span}>{span}</span>
@@ -54,14 +55,7 @@ function About({ id, content }: AboutProps) {
           destination="/about"
         />
       </div>
-      <div
-        className="
-        max-w-xs self-end
-        rounded-blob-hero bg-light-grey
-        p-4 md:max-w-md lg:max-w-none lg:self-center"
-      >
-        <Image src={imageHiking} alt="" />
-      </div>
+      <Image src={imageFeelingProud} alt="" />
     </div>
   );
 }

@@ -24,10 +24,14 @@ module.exports = {
         'padding-container': '50.625rem',
       },
       backgroundImage: {
+        blobs: 'url("/backgrounds/blob-scatter.svg")',
         hero: 'url("/backgrounds/wave-hero.svg")',
+        about: 'url("/backgrounds/circle-scatter.svg")',
       },
       backgroundSize: {
+        blobs: 'contain',
         hero: 'cover',
+        about: 'contain',
       },
       backgroundPosition: {
         hero: 'center',
@@ -36,8 +40,6 @@ module.exports = {
         400: '400ms',
       },
       borderRadius: {
-        'blob-hero': '43% 57% 46% 54% / 38% 50% 50% 62% ',
-        'blob-about': '30% 70% 74% 26% / 18% 50% 50% 82% ',
         'blob-contact': '30% 70% 44% 56% / 30% 30% 70% 70%',
       },
     },

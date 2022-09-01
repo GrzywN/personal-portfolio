@@ -56,9 +56,8 @@ function Hero({ id, content }: HeroProps) {
       </div>
       <div
         className="
-        max-w-xs self-end 
-        rounded-blob-hero bg-light-grey p-4
-        md:max-w-md lg:max-w-none"
+        max-w-xs self-end p-4
+        md:max-w-none"
       >
         <Image src={imageWelcoming} alt="" />
       </div>
