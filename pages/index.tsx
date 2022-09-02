@@ -1,7 +1,7 @@
 import React from 'react';
-import Head from 'next/head';
 import { createClient, EntryCollection } from 'contentful';
 
+import Meta from '../components/Meta';
 import Hero from '../components/Hero';
 import Section from '../components/Section';
 import Navbar from '../components/Navbar';
@@ -9,6 +9,7 @@ import Container from '../components/Container';
 import About from '../components/About';
 import Portfolio from '../components/Portfolio';
 import Contact from '../components/Contact';
+import Footer from '../components/Footer';
 
 import type * as CmsModels from '../types/content/models';
 
@@ -18,6 +19,7 @@ type ContentType = {
   about: CmsModels.AboutFields;
   portfolio: CmsModels.PortfolioFields;
   contact: CmsModels.ContactFields;
+  footer: CmsModels.FooterFields;
 
   portfolioItems: CmsModels.PortfolioItemFields;
 };
@@ -27,13 +29,12 @@ type HomeProps = {
 };
 
 function Home({ content }: HomeProps) {
-  const { navbar, hero, about, portfolio, portfolioItems, contact } = content;
+  const { navbar, hero, about, portfolio, portfolioItems, contact, footer } =
+    content;
 
   return (
     <>
-      <Head>
-        <title>Karol Binkowski - Home</title>
-      </Head>
+      <Meta />
       <Navbar content={navbar} />
       <Container className="lg:bg-blobs lg:bg-no-repeat">
         <Section className="bg-hero">
@@ -53,6 +54,7 @@ function Home({ content }: HomeProps) {
           <Contact content={contact} id="contact" />
         </Section>
       </Container>
+      <Footer content={footer} />
     </>
   );
 }
@@ -70,6 +72,7 @@ async function getStaticProps({ locale }: { locale: string }) {
     'portfolio',
     'portfolioItem',
     'contact',
+    'footer',
   ];
 
   const entries = await Promise.all(
@@ -81,7 +84,8 @@ async function getStaticProps({ locale }: { locale: string }) {
     )
   );
 
-  const [navbar, hero, about, portfolio, portfolioItems, contact] = entries;
+  const [navbar, hero, about, portfolio, portfolioItems, contact, footer] =
+    entries;
 
   const getSingleContentField = (entry: EntryCollection<unknown>) => {
     return entry.items[0].fields;
@@ -97,6 +101,7 @@ async function getStaticProps({ locale }: { locale: string }) {
     about: getSingleContentField(about) as CmsModels.AboutFields,
     portfolio: getSingleContentField(portfolio) as CmsModels.PortfolioFields,
     contact: getSingleContentField(contact) as CmsModels.ContactFields,
+    footer: getSingleContentField(footer) as CmsModels.FooterFields,
 
     portfolioItems: getMultipleContentFields(
       portfolioItems

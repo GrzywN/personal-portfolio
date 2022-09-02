@@ -7,6 +7,7 @@ import type {
   PortfolioItemFields,
 } from './Portfolio';
 import type { ContactFields } from './Contact';
+import type { FooterFields } from './Footer';
 
 export {
   NavbarFields,
@@ -16,4 +17,5 @@ export {
   PortfolioItemField,
   PortfolioItemFields,
   ContactFields,
+  FooterFields,
 };
