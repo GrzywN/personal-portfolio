@@ -7,6 +7,7 @@ import Section from '../components/Section';
 import Navbar from '../components/Navbar';
 import Container from '../components/Container';
 import About from '../components/About';
+import Skills from '../components/Skills';
 import Portfolio from '../components/Portfolio';
 import Contact from '../components/Contact';
 import Footer from '../components/Footer';
@@ -17,6 +18,7 @@ type ContentType = {
   navbar: CmsModels.NavbarFields;
   hero: CmsModels.HeroFields;
   about: CmsModels.AboutFields;
+  skills: CmsModels.SkillsFields;
   portfolio: CmsModels.PortfolioFields;
   contact: CmsModels.ContactFields;
   footer: CmsModels.FooterFields;
@@ -29,19 +31,30 @@ type HomeProps = {
 };
 
 function Home({ content }: HomeProps) {
-  const { navbar, hero, about, portfolio, portfolioItems, contact, footer } =
-    content;
+  const {
+    navbar,
+    hero,
+    about,
+    skills,
+    portfolio,
+    portfolioItems,
+    contact,
+    footer,
+  } = content;
 
   return (
     <>
       <Meta />
       <Navbar content={navbar} />
-      <Container className="lg:bg-blobs lg:bg-no-repeat">
+      <Container className="lg:bg-container lg:bg-no-repeat">
         <Section className="bg-hero">
           <Hero content={hero} id="hero" />
         </Section>
         <Section className="bg-about">
           <About content={about} id="about" />
+        </Section>
+        <Section className="">
+          <Skills content={skills} />
         </Section>
         <Section skew skewedBgClass="bg-sky-blue">
           <Portfolio
@@ -50,6 +63,7 @@ function Home({ content }: HomeProps) {
             id="portfolio"
           />
         </Section>
+
         <Section>
           <Contact content={contact} id="contact" />
         </Section>
@@ -69,6 +83,7 @@ async function getStaticProps({ locale }: { locale: string }) {
     'navbar',
     'hero',
     'about',
+    'skills',
     'portfolio',
     'portfolioItem',
     'contact',
@@ -84,8 +99,16 @@ async function getStaticProps({ locale }: { locale: string }) {
     )
   );
 
-  const [navbar, hero, about, portfolio, portfolioItems, contact, footer] =
-    entries;
+  const [
+    navbar,
+    hero,
+    about,
+    skills,
+    portfolio,
+    portfolioItems,
+    contact,
+    footer,
+  ] = entries;
 
   const getSingleContentField = (entry: EntryCollection<unknown>) => {
     return entry.items[0].fields;
@@ -99,6 +122,7 @@ async function getStaticProps({ locale }: { locale: string }) {
     navbar: getSingleContentField(navbar) as CmsModels.NavbarFields,
     hero: getSingleContentField(hero) as CmsModels.HeroFields,
     about: getSingleContentField(about) as CmsModels.AboutFields,
+    skills: getSingleContentField(skills) as CmsModels.SkillsFields,
     portfolio: getSingleContentField(portfolio) as CmsModels.PortfolioFields,
     contact: getSingleContentField(contact) as CmsModels.ContactFields,
     footer: getSingleContentField(footer) as CmsModels.FooterFields,

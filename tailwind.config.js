@@ -26,12 +26,12 @@ module.exports = {
         'padding-container': '50.625rem',
       },
       backgroundImage: {
-        blobs: 'url("/backgrounds/blob-scatter.svg")',
+        container: 'url("/backgrounds/blob-scatter.svg")',
         hero: 'url("/backgrounds/wave-hero.svg")',
         about: 'url("/backgrounds/circle-scatter.svg")',
       },
       backgroundSize: {
-        blobs: 'contain',
+        container: 'contain',
         hero: 'cover',
         about: 'contain',
       },
