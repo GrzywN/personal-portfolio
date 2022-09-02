@@ -8,10 +8,11 @@ import twitterLogo from '../../public/icons/logo-twitter.svg';
 import type { FooterFields } from '../../types/content/models';
 
 type FooterProps = {
+  className?: string;
   content: FooterFields;
 };
 
-function Footer({ content }: FooterProps) {
+function Footer({ className, content }: FooterProps) {
   const {
     text,
     githubUrl,
@@ -26,7 +27,7 @@ function Footer({ content }: FooterProps) {
   } = content;
 
   return (
-    <footer className="bg-darker-grey">
+    <footer className={className}>
       <div
         className="
         mx-auto flex max-w-padding-container flex-col-reverse items-center gap-y-4 py-12 px-8
@@ -65,5 +66,9 @@ function Footer({ content }: FooterProps) {
     </footer>
   );
 }
+
+Footer.defaultProps = {
+  className: '',
+};
 
 export default Footer;

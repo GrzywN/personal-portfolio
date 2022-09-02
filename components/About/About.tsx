@@ -7,11 +7,10 @@ import imageFeelingProud from '../../public/illustrations/feeling_proud.svg';
 import type { AboutFields } from '../../types/content/models';
 
 type AboutProps = {
-  id: string;
   content: AboutFields;
 };
 
-function About({ id, content }: AboutProps) {
+function About({ content }: AboutProps) {
   const { title, paragraph, cta } = content;
   const paragraphs = paragraph.split('\n').map((e) => e.trim());
 
@@ -21,7 +20,6 @@ function About({ id, content }: AboutProps) {
       grid max-w-padding-container place-items-center px-8 text-center
       md:gap-16
       lg:grid-cols-2 lg:gap-24 lg:text-start"
-      id={id}
     >
       <div
         className="
@@ -32,14 +30,15 @@ function About({ id, content }: AboutProps) {
         <h2
           className="
           text-2xl font-extrabold text-white
-          md:text-5xl
-          lg:text-7xl"
+          sm:text-3xl
+          md:text-4xl
+          lg:text-5xl"
         >
           {title}
         </h2>
         <p
           className="
-          grid max-w-[50ch] gap-4 text-sm leading-relaxed text-gray-300 
+          grid max-w-[50ch] gap-4 text-sm leading-relaxed text-gray-400 
           md:text-lg
           lg:text-base"
         >

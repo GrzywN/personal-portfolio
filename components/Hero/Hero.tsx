@@ -7,11 +7,10 @@ import imageWelcoming from '../../public/illustrations/welcoming.svg';
 import type { HeroFields } from '../../types/content/models';
 
 type HeroProps = {
-  id: string;
   content: HeroFields;
 };
 
-function Hero({ id, content }: HeroProps) {
+function Hero({ content }: HeroProps) {
   const { title, paragraph, cta } = content;
   const splitTitles = title.split('.', 2).map((e) => `${e.trim()}.`);
 
@@ -21,7 +20,6 @@ function Hero({ id, content }: HeroProps) {
       mt-4 grid h-full max-w-padding-container place-items-center px-8 text-center
       md:gap-16
       lg:grid-cols-2 lg:gap-4 lg:text-start"
-      id={id}
       title={splitTitles[0]}
     >
       <div
@@ -33,6 +31,7 @@ function Hero({ id, content }: HeroProps) {
         <h2
           className="
           text-2xl font-extrabold
+          sm:text-3xl
           md:text-5xl"
         >
           <span className="text-white">{splitTitles[0]}</span>
@@ -41,7 +40,7 @@ function Hero({ id, content }: HeroProps) {
         </h2>
         <p
           className="
-          max-w-[50ch] text-sm leading-relaxed text-gray-300 
+          max-w-[50ch] text-sm leading-relaxed text-gray-400 
           md:text-lg"
         >
           {paragraph}

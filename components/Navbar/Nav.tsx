@@ -4,12 +4,13 @@ import NavItem from './NavItem';
 import type { NavbarFields } from '../../types/content/models';
 
 type NavProps = {
+  onClick: () => void;
   isOpen: boolean;
   content: NavbarFields;
 };
 
-function Nav({ isOpen, content }: NavProps) {
-  const { about, blog, portfolio } = content;
+function Nav({ onClick, isOpen, content }: NavProps) {
+  const { about, blog, skills, portfolio } = content;
 
   return (
     <nav
@@ -20,9 +21,30 @@ function Nav({ isOpen, content }: NavProps) {
       id="primary-navigation"
     >
       <ul className="flex flex-col gap-8 text-xl text-white sm:text-3xl md:flex-row md:text-base">
-        <NavItem title={about} destination="#about" index="01" />
-        <NavItem title={portfolio} destination="#portfolio" index="02" />
-        <NavItem title={blog} destination="/blog" index="03" />
+        <NavItem
+          onClick={onClick}
+          title={about}
+          destination="#about"
+          index="01"
+        />
+        <NavItem
+          onClick={onClick}
+          title={skills}
+          destination="#skills"
+          index="02"
+        />
+        <NavItem
+          onClick={onClick}
+          title={portfolio}
+          destination="#portfolio"
+          index="03"
+        />
+        <NavItem
+          onClick={onClick}
+          title={blog}
+          destination="/blog"
+          index="04"
+        />
       </ul>
     </nav>
   );

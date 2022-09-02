@@ -8,3 +8,4 @@ Małe:
 - Tło portfolio w css skewY
 
 - Zmienić liveSiteUrl na coś z demem albo coś uniwersalnego, bo teraz nie pasuje
+- Pełne imie i nazwisko full name

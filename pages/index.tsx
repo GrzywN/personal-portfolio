@@ -47,28 +47,23 @@ function Home({ content }: HomeProps) {
       <Meta />
       <Navbar content={navbar} />
       <Container className="lg:bg-container lg:bg-no-repeat">
-        <Section className="bg-hero">
-          <Hero content={hero} id="hero" />
+        <Section id="hero">
+          <Hero content={hero} />
         </Section>
-        <Section className="bg-about">
-          <About content={about} id="about" />
+        <Section id="about" className="bg-about">
+          <About content={about} />
         </Section>
-        <Section className="">
+        <Section id="skills">
           <Skills content={skills} />
         </Section>
-        <Section skew skewedBgClass="bg-sky-blue">
-          <Portfolio
-            generalContent={portfolio}
-            itemsContent={portfolioItems}
-            id="portfolio"
-          />
+        <Section id="portfolio" skew skewedBgClassName="bg-sky-blue">
+          <Portfolio generalContent={portfolio} itemsContent={portfolioItems} />
         </Section>
-
-        <Section>
-          <Contact content={contact} id="contact" />
+        <Section id="contact">
+          <Contact content={contact} />
         </Section>
       </Container>
-      <Footer content={footer} />
+      <Footer className="bg-darker-grey" content={footer} />
     </>
   );
 }

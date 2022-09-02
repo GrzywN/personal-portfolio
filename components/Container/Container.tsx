@@ -1,7 +1,7 @@
 import React from 'react';
 
 type ContainerProps = {
-  className: string;
+  className?: string;
   children: React.ReactNode;
 };
 
@@ -16,5 +16,9 @@ function Container({ className, children }: ContainerProps) {
     </main>
   );
 }
+
+Container.defaultProps = {
+  className: '',
+};
 
 export default Container;

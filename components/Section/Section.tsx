@@ -4,14 +4,21 @@ type SectionProps = {
   className?: string;
   children: React.ReactNode;
   skew?: boolean;
-  skewedBgClass?: string;
+  skewedBgClassName?: string;
+  id: string;
 };
 
-function Section({ className, children, skew, skewedBgClass }: SectionProps) {
-  const skewClasses = skew ? `-skew-y-6 ${skewedBgClass}` : '';
+function Section({
+  className,
+  children,
+  skew,
+  skewedBgClassName,
+  id,
+}: SectionProps) {
+  const skewClasses = skew ? `-skew-y-6 ${skewedBgClassName}` : '';
 
   return (
-    <section className={`${className} relative w-full bg-no-repeat`}>
+    <section className={`${className} relative w-full bg-no-repeat`} id={id}>
       <div className={`${skewClasses} absolute inset-0`} />
       <div
         className="
@@ -27,7 +34,7 @@ function Section({ className, children, skew, skewedBgClass }: SectionProps) {
 Section.defaultProps = {
   className: '',
   skew: false,
-  skewedBgClass: '',
+  skewedBgClassName: '',
 };
 
 export default Section;

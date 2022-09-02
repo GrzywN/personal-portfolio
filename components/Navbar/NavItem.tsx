@@ -2,21 +2,24 @@ import React from 'react';
 import Link from 'next/link';
 
 type NavItemProps = {
+  destination: string;
+  onClick: () => void;
   index: string;
   title: string;
-  destination: string;
 };
 
-function NavItem({ index, title, destination }: NavItemProps) {
+function NavItem({ destination, onClick, index, title }: NavItemProps) {
   return (
-    <Link href={destination}>
-      <li className="cursor-pointer">
-        <span className="mr-1 font-rounded font-bold" aria-hidden="true">
-          {index}
-        </span>
-        {title}
-      </li>
-    </Link>
+    <li className="cursor-pointer">
+      <Link href={destination} passHref>
+        <a onClick={onClick}>
+          <span className="mr-1 font-rounded font-bold" aria-hidden="true">
+            {index}
+          </span>
+          {title}
+        </a>
+      </Link>
+    </li>
   );
 }
 

@@ -13,8 +13,7 @@ module.exports = {
       colors: {
         'light-grey': '#27272a',
         'dark-grey': '#18181b',
-        'darker-grey': '#0c0c0e',
-        'almost-black': '#09090b', // Dodać zamiast czystego czarnego
+        'darker-grey': '#131316',
         'sky-blue': '#38bdf8',
         orange: '#f87238',
       },
