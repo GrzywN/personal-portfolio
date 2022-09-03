@@ -11,7 +11,7 @@ function Logo({ onClick }: LogoProps) {
       <a onClick={onClick}>
         <h1
           className="
-          cursor-pointer font-rounded text-lg font-bold text-white 
+          cursor-pointer font-rounded text-lg font-bold text-white
           lg:text-xl"
         >
           Karol Binkowski

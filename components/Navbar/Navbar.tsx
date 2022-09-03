@@ -32,11 +32,11 @@ function Navbar({ content }: NavbarProps) {
         <Cta
           className="
           ml-auto hidden
-          md:inline"
+          lg:inline"
           destination="#contact"
           text={cta}
         />
-        <div className="md:hidden">
+        <div className="lg:hidden">
           <Hamburger
             rounded
             color="white"

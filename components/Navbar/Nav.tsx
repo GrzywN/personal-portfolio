@@ -17,10 +17,15 @@ function Nav({ onClick, isOpen, content }: NavProps) {
       className={`
       ${isOpen ? 'scale-x-100 opacity-100' : 'scale-x-0 opacity-0'} 
       fixed inset-x-8 bottom-4 top-24 grid place-items-center rounded-md bg-light-grey/90 duration-400 ease-in-out
-      md:static md:ml-8 md:scale-x-100 md:bg-transparent md:opacity-100 md:transition-none`}
+      lg:static lg:ml-8 lg:scale-x-100 lg:bg-transparent lg:opacity-100 lg:transition-none`}
       id="primary-navigation"
     >
-      <ul className="flex flex-col gap-8 text-xl text-white sm:text-3xl md:flex-row md:text-base">
+      <ul
+        className="
+        flex flex-col gap-8 text-xl text-white 
+        sm:text-2xl 
+        lg:flex-row lg:text-sm"
+      >
         <NavItem
           onClick={onClick}
           title={about}
