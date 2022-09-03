@@ -10,9 +10,14 @@ type NavItemProps = {
 
 function NavItem({ destination, onClick, index, title }: NavItemProps) {
   return (
-    <li className="cursor-pointer">
+    <li>
       <Link href={destination} passHref>
-        <a onClick={onClick}>
+        <a
+          className="
+          cursor-pointer
+            transition-colors duration-400 hover:text-sky-blue focus-visible:text-sky-blue"
+          onClick={onClick}
+        >
           <span className="mr-1 font-rounded font-bold" aria-hidden="true">
             {index}
           </span>

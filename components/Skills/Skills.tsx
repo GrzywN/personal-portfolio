@@ -28,7 +28,7 @@ function Skills({ content }: SkillsProps) {
   const { title, paragraph } = content;
 
   return (
-    <div className="grid gap-24">
+    <div className="grid gap-24 px-8">
       <header className="text-center">
         <h2
           className="
@@ -39,8 +39,10 @@ function Skills({ content }: SkillsProps) {
         </h2>
         <p
           className="
-          mx-auto mt-3 max-w-2xl text-xl text-gray-400 
-          sm:mt-4"
+          mx-auto mt-3 max-w-2xl text-sm text-gray-400 
+          sm:mt-4 sm:text-base
+          md:text-lg
+          lg:text-xl"
         >
           {paragraph}
         </p>

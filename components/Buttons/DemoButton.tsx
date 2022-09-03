@@ -12,7 +12,9 @@ function DemoButton({ href, text }: DemoButtonProps) {
   return (
     <a
       href={href}
-      className="inline-flex items-center gap-4 rounded-lg border border-dark-grey bg-white py-2 px-3 text-center text-sm font-medium text-light-grey"
+      className="
+      inline-flex items-center gap-4 rounded-lg border border-dark-grey bg-white py-2 px-3 text-center text-sm font-medium text-light-grey 
+        transition-shadow duration-400 hover:shadow-xl focus-visible:shadow-xl"
     >
       <Image src={iconDesktopOutline} width={24} height={24} alt="" />
       {text}
