@@ -1,9 +1,7 @@
 export type ContactFields = {
   title: string;
-  firstName: string;
-  firstNamePlaceholder: string;
-  lastName: string;
-  lastNamePlaceholder: string;
+  fullName: string;
+  fullNamePlaceholder: string;
   email: string;
   emailPlaceholder: string;
   message: string;

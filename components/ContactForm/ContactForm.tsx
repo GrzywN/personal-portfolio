@@ -15,10 +15,8 @@ type ContactFormProps = {
 
 function ContactForm({ content }: ContactFormProps) {
   const {
-    firstName,
-    firstNamePlaceholder,
-    lastName,
-    lastNamePlaceholder,
+    fullName,
+    fullNamePlaceholder,
     email,
     emailPlaceholder,
     message,
@@ -30,14 +28,12 @@ function ContactForm({ content }: ContactFormProps) {
 
   const formik = useFormik({
     initialValues: {
-      firstName: '',
-      lastName: '',
+      fullName: '',
       email: '',
       message: '',
     },
     validationSchema: yup.object({
-      firstName: yup.string().required(onEmptyField),
-      lastName: yup.string().required(onEmptyField),
+      fullName: yup.string().required(onEmptyField),
       email: yup.string().required(onEmptyField).email(onInvalidEmail),
       message: yup.string().required(onEmptyField),
     }),
@@ -46,41 +42,26 @@ function ContactForm({ content }: ContactFormProps) {
 
   return (
     <form
-      className="grid w-full max-w-lg gap-8"
+      className="
+      space-y-8
+      sm:w-96"
       action="https://formsubmit.co/56ba29188e35a9bc8dd475cf7a096839"
       method="POST"
     >
-      <div className="grid gap-8 md:grid-cols-2">
-        <div className="relative">
-          <Label htmlFor="firstName">{firstName}</Label>
-          <Input
-            value={formik.values.firstName}
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            id="firstName"
-            name="firstName"
-            placeholder={firstNamePlaceholder}
-            error={formik.touched.firstName! && !!formik.errors.firstName}
-          />
-          <ErrorLabel>
-            {formik.touched.firstName && formik.errors.firstName}
-          </ErrorLabel>
-        </div>
-        <div className="relative">
-          <Label htmlFor="lastName">{lastName}</Label>
-          <Input
-            value={formik.values.lastName}
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            id="lastName"
-            name="lastName"
-            placeholder={lastNamePlaceholder}
-            error={formik.touched.lastName! && !!formik.errors.lastName}
-          />
-          <ErrorLabel>
-            {formik.touched.lastName && formik.errors.lastName}
-          </ErrorLabel>
-        </div>
+      <div className="relative">
+        <Label htmlFor="fullName">{fullName}</Label>
+        <Input
+          value={formik.values.fullName}
+          onChange={formik.handleChange}
+          onBlur={formik.handleBlur}
+          id="fullName"
+          name="fullName"
+          placeholder={fullNamePlaceholder}
+          error={formik.touched.fullName! && !!formik.errors.fullName}
+        />
+        <ErrorLabel>
+          {formik.touched.fullName && formik.errors.fullName}
+        </ErrorLabel>
       </div>
       <div className="relative">
         <Label htmlFor="email">{email}</Label>
