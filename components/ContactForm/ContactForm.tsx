@@ -34,9 +34,9 @@ function ContactForm({ content }: ContactFormProps) {
       message: '',
     },
     validationSchema: yup.object({
-      fullName: yup.string().required(onEmptyField),
-      email: yup.string().required(onEmptyField).email(onInvalidEmail),
-      message: yup.string().required(onEmptyField),
+      fullName: yup.string().trim().required(onEmptyField),
+      email: yup.string().trim().required(onEmptyField).email(onInvalidEmail),
+      message: yup.string().trim().required(onEmptyField),
     }),
     onSubmit: () => {},
   });
@@ -48,6 +48,16 @@ function ContactForm({ content }: ContactFormProps) {
       sm:w-96"
       action="https://formsubmit.co/56ba29188e35a9bc8dd475cf7a096839"
       method="POST"
+      onSubmit={(event) => {
+        if (
+          !formik.isValid ||
+          formik.values.fullName === '' ||
+          formik.values.email === '' ||
+          formik.values.message === ''
+        ) {
+          event.preventDefault();
+        }
+      }}
     >
       <div className="relative">
         <Label htmlFor="fullName">{fullName}</Label>
