@@ -9,4 +9,5 @@ export type ContactFields = {
   submit: string;
   onEmptyField: string;
   onInvalidEmail: string;
+  thankYouUrl: string;
 };

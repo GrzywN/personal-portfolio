@@ -11,7 +11,7 @@ export type PortfolioItemField = {
   title: string;
   paragraph: string;
   image: ContentfulImage;
-  liveSiteUrl: string;
+  demoUrl: string;
   sourceUrl: string;
   technologiesUsed: string[];
 };

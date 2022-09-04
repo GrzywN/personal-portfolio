@@ -9,6 +9,12 @@ import type {
 } from './Portfolio';
 import type { ContactFields } from './Contact';
 import type { FooterFields } from './Footer';
+import type { HomeFields, HomeContent } from './Home';
+import type {
+  SectionThankYouFields,
+  ThankYouContent,
+  ThankYouFields,
+} from './ThankYou';
 
 export {
   NavbarFields,
@@ -20,4 +26,9 @@ export {
   PortfolioItemFields,
   ContactFields,
   FooterFields,
+  HomeFields,
+  HomeContent,
+  SectionThankYouFields,
+  ThankYouContent,
+  ThankYouFields,
 };

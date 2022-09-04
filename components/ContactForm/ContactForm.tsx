@@ -24,6 +24,7 @@ function ContactForm({ content }: ContactFormProps) {
     submit,
     onEmptyField,
     onInvalidEmail,
+    thankYouUrl,
   } = content;
 
   const formik = useFormik({
@@ -99,6 +100,7 @@ function ContactForm({ content }: ContactFormProps) {
           value="Personal Website: New submission!"
         />
         <input type="hidden" name="_template" value="table" />
+        <input type="hidden" name="_next" value={thankYouUrl} />
       </div>
       <div className="mt-4">
         <Submit>{submit}</Submit>

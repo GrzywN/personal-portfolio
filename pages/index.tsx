@@ -1,5 +1,5 @@
 import React from 'react';
-import { createClient, EntryCollection } from 'contentful';
+import { createClient } from 'contentful';
 
 import Meta from '../components/Meta';
 import Hero from '../components/Hero';
@@ -12,22 +12,10 @@ import Portfolio from '../components/Portfolio';
 import Contact from '../components/Contact';
 import Footer from '../components/Footer';
 
-import type * as CmsModels from '../types/content/models';
-
-type ContentType = {
-  navbar: CmsModels.NavbarFields;
-  hero: CmsModels.HeroFields;
-  about: CmsModels.AboutFields;
-  skills: CmsModels.SkillsFields;
-  portfolio: CmsModels.PortfolioFields;
-  contact: CmsModels.ContactFields;
-  footer: CmsModels.FooterFields;
-
-  portfolioItems: CmsModels.PortfolioItemFields;
-};
+import type { HomeFields, HomeContent } from '../types/content/models';
 
 type HomeProps = {
-  content: ContentType;
+  content: HomeContent;
 };
 
 function Home({ content }: HomeProps) {
@@ -63,7 +51,7 @@ function Home({ content }: HomeProps) {
           <Contact content={contact} />
         </Section>
       </Container>
-      <Footer className="bg-darker-grey" content={footer} />
+      <Footer content={footer} />
     </>
   );
 }
@@ -74,62 +62,31 @@ async function getStaticProps({ locale }: { locale: string }) {
 
   const client = createClient({ space, accessToken });
 
-  const contentModels = [
-    'navbar',
-    'hero',
-    'about',
-    'skills',
-    'portfolio',
-    'portfolioItem',
-    'contact',
-    'footer',
-  ];
+  const entries = await client.getEntries({ content_type: 'home', locale });
+  const homeFields = entries.items[0].fields as HomeFields;
 
-  const entries = await Promise.all(
-    contentModels.map((model) =>
-      client.getEntries({
-        content_type: model,
-        locale,
-      })
-    )
-  );
+  const navbar = homeFields.navbar.fields;
+  const hero = homeFields.hero.fields;
+  const about = homeFields.about.fields;
+  const skills = homeFields.skills.fields;
+  const portfolio = homeFields.portfolio.fields;
+  const contact = homeFields.contact.fields;
+  const footer = homeFields.footer.fields;
 
-  const [
-    navbar,
-    hero,
-    about,
-    skills,
-    portfolio,
-    portfolioItems,
-    contact,
-    footer,
-  ] = entries;
-
-  const getSingleContentField = (entry: EntryCollection<unknown>) => {
-    return entry.items[0].fields;
-  };
-
-  const getMultipleContentFields = (entry: EntryCollection<unknown>) => {
-    return entry.items.map((item) => item.fields);
-  };
-
-  const content = {
-    navbar: getSingleContentField(navbar) as CmsModels.NavbarFields,
-    hero: getSingleContentField(hero) as CmsModels.HeroFields,
-    about: getSingleContentField(about) as CmsModels.AboutFields,
-    skills: getSingleContentField(skills) as CmsModels.SkillsFields,
-    portfolio: getSingleContentField(portfolio) as CmsModels.PortfolioFields,
-    contact: getSingleContentField(contact) as CmsModels.ContactFields,
-    footer: getSingleContentField(footer) as CmsModels.FooterFields,
-
-    portfolioItems: getMultipleContentFields(
-      portfolioItems
-    ) as CmsModels.PortfolioItemFields,
-  };
+  const portfolioItems = homeFields.portfolioItems.map((item) => item.fields);
 
   return {
     props: {
-      content,
+      content: {
+        navbar,
+        hero,
+        about,
+        skills,
+        portfolio,
+        portfolioItems,
+        contact,
+        footer,
+      },
     },
   };
 }

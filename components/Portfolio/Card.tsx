@@ -16,7 +16,7 @@ type CardProps = {
 };
 
 function Card({ generalContent, itemContent, reverseOrder }: CardProps) {
-  const { title, paragraph, image, liveSiteUrl, sourceUrl, technologiesUsed } =
+  const { title, paragraph, image, demoUrl, sourceUrl, technologiesUsed } =
     itemContent;
   const { demo, source } = generalContent;
 
@@ -64,7 +64,7 @@ function Card({ generalContent, itemContent, reverseOrder }: CardProps) {
         </p>
         <ul className="mt-auto flex gap-4 pt-8">
           <li>
-            <DemoButton href={liveSiteUrl} text={demo} />
+            <DemoButton href={demoUrl} text={demo} />
           </li>
           <li>
             <GitHubButton href={sourceUrl} text={source} />
