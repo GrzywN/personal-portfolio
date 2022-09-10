@@ -22,7 +22,7 @@ function ThankYouPage({ content }: ThankYouProps) {
     <>
       <Meta title={`Karol Binkowski - ${title}`} />
       <Navbar content={navbar} />
-      <Container>
+      <Container className="px-8 py-24 lg:pb-24">
         <Section className="grid place-items-center" id="thank-you">
           <ThankYou content={sectionThankYou} />
         </Section>
