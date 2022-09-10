@@ -18,7 +18,7 @@ function Portfolio({ generalContent, itemsContent }: PortfolioProps) {
     >
       <header
         className="
-        grid gap-2 font-inter
+        grid gap-2
         md:gap-4
         lg:gap-6"
       >

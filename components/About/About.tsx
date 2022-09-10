@@ -24,7 +24,6 @@ function About({ content }: AboutProps) {
       <div
         className="
         order-2 grid gap-4
-        font-inter
         md:gap-6 lg:gap-8 lg:p-0"
       >
         <h2

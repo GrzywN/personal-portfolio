@@ -24,7 +24,7 @@ function Hero({ content }: HeroProps) {
     >
       <div
         className="
-        order-2 grid gap-4 font-inter
+        order-2 grid gap-4
         md:gap-6
         lg:order-none lg:gap-8"
       >
