@@ -1,12 +1,10 @@
 import React from 'react';
-import { BLOCKS } from '@contentful/rich-text-types';
+import { BLOCKS, Document } from '@contentful/rich-text-types';
 import {
   documentToReactComponents,
   CommonNode,
 } from '@contentful/rich-text-react-renderer';
 import Image from 'next/image';
-
-import { IBlogPosts } from '../../types/generated/contentful';
 
 const renderOption = {
   renderNode: {
@@ -22,13 +20,12 @@ const renderOption = {
   },
 };
 
-type BlogPostProps = {
-  blogPostContent: IBlogPosts;
+type ArticleProps = {
+  title: string;
+  content: Document;
 };
 
-function BlogPost({ blogPostContent }: BlogPostProps) {
-  const { title, content } = blogPostContent.fields;
-
+function Article({ title, content }: ArticleProps) {
   return (
     <article
       className="
@@ -43,4 +40,4 @@ function BlogPost({ blogPostContent }: BlogPostProps) {
   );
 }
 
-export default BlogPost;
+export default Article;

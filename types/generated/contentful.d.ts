@@ -268,6 +268,37 @@ export interface INavbar extends Entry<INavbarFields> {
   };
 }
 
+export interface IPageAboutFields {
+  /** Navbar */
+  navbar: INavbar;
+
+  /** Title */
+  title: string;
+
+  /** Content */
+  content: Document;
+
+  /** Footer */
+  footer: IFooter;
+}
+
+export interface IPageAbout extends Entry<IPageAboutFields> {
+  sys: {
+    id: string;
+    type: string;
+    createdAt: string;
+    updatedAt: string;
+    locale: string;
+    contentType: {
+      sys: {
+        id: 'pageAbout';
+        linkType: 'ContentType';
+        type: 'Link';
+      };
+    };
+  };
+}
+
 export interface IPageBlogFields {
   /** Navbar */
   navbar: INavbar;
@@ -509,6 +540,7 @@ export type CONTENT_TYPE =
   | 'hero'
   | 'home'
   | 'navbar'
+  | 'pageAbout'
   | 'pageBlog'
   | 'pageBlogPost'
   | 'pageThankYou'

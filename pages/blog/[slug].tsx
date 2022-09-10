@@ -5,7 +5,7 @@ import Meta from '../../components/Meta';
 import Navbar from '../../components/Navbar';
 import Container from '../../components/Container';
 import Section from '../../components/Section';
-import BlogPost from '../../components/BlogPost';
+import Article from '../../components/Article';
 import Footer from '../../components/Footer';
 
 import {
@@ -22,7 +22,7 @@ type BlogPostPageProps = {
 
 function BlogPostPage({ pageContent, blogPostContent }: BlogPostPageProps) {
   const { navbar, footer } = pageContent.fields;
-  const { title } = blogPostContent.fields;
+  const { title, content } = blogPostContent.fields;
 
   return (
     <>
@@ -30,7 +30,7 @@ function BlogPostPage({ pageContent, blogPostContent }: BlogPostPageProps) {
       <Navbar content={navbar} />
       <Container className="px-8 pt-48 lg:pb-48">
         <Section>
-          <BlogPost blogPostContent={blogPostContent} />
+          <Article title={title} content={content} />
         </Section>
       </Container>
       <Footer content={footer} />
