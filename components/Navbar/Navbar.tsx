@@ -5,6 +5,8 @@ import Nav from './Nav';
 import Logo from './Logo';
 import Cta from '../Cta';
 
+import useScroll from '../../hooks/useScroll';
+
 import { INavbar } from '../../types/generated/contentful';
 
 type NavbarProps = {
@@ -14,14 +16,24 @@ type NavbarProps = {
 function Navbar({ content }: NavbarProps) {
   const [isOpen, setIsOpen] = useState(false);
 
+  const { cta } = content.fields;
+
+  const { scrollDirection } = useScroll();
+
   const clickHandler = () => {
     setIsOpen(false);
   };
 
-  const { cta } = content.fields;
-
   return (
-    <header className="fixed top-4 z-50 grid w-full place-items-center px-8">
+    <header
+      className={`
+      ${
+        scrollDirection === 'down'
+          ? 'lg:opacity-100'
+          : 'lg:-translate-y-full lg:opacity-0'
+      }
+      fixed top-4 z-50 grid w-full place-items-center px-8 transition duration-400`}
+    >
       <div
         className="
         flex h-16 w-full max-w-padding-container items-center
