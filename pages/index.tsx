@@ -12,38 +12,47 @@ import Portfolio from '../components/Portfolio';
 import Contact from '../components/Contact';
 import Footer from '../components/Footer';
 
-import { IHomeFields } from '../types/generated/contentful';
+import { IHome } from '../types/generated/contentful';
 
 type HomeProps = {
-  content: IHomeFields;
+  content: IHome;
 };
 
 function Home({ content }: HomeProps) {
+  const {
+    title,
+    navbar,
+    hero,
+    about,
+    skills,
+    portfolio,
+    portfolioItems,
+    contact,
+    footer,
+  } = content.fields;
+
   return (
     <>
-      <Meta />
-      <Navbar content={content.navbar} />
+      <Meta title={`Karol Binkowski - ${title}`} />
+      <Navbar content={navbar} />
       <Container className="lg:bg-container lg:bg-no-repeat">
         <Section id="hero">
-          <Hero content={content.hero} />
+          <Hero content={hero} />
         </Section>
         <Section id="about" className="bg-about">
-          <About content={content.about} />
+          <About content={about} />
         </Section>
         <Section id="skills">
-          <Skills content={content.skills} />
+          <Skills content={skills} />
         </Section>
         <Section id="portfolio" skew skewedBgClassName="bg-sky-blue">
-          <Portfolio
-            generalContent={content.portfolio}
-            itemsContent={content.portfolioItems}
-          />
+          <Portfolio generalContent={portfolio} itemsContent={portfolioItems} />
         </Section>
         <Section id="contact">
-          <Contact content={content.contact} />
+          <Contact content={contact} />
         </Section>
       </Container>
-      <Footer content={content.footer} />
+      <Footer content={footer} />
     </>
   );
 }
@@ -55,7 +64,7 @@ async function getStaticProps({ locale }: { locale: string }) {
   const client = createClient({ space, accessToken });
 
   const entries = await client.getEntries({ content_type: 'home', locale });
-  const content = entries.items[0].fields as IHomeFields;
+  const content = entries.items[0] as IHome;
 
   return {
     props: {

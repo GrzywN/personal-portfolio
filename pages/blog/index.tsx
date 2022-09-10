@@ -19,7 +19,7 @@ function BlogPage({ content }: BlogPageProps) {
 
   return (
     <>
-      <Meta />
+      <Meta title={`Karol Binkowski - ${sectionBlog.fields.title}`} />
       <Navbar content={navbar} />
       <Container>
         <Section id="blog">

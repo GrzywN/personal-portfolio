@@ -22,10 +22,11 @@ type BlogPostPageProps = {
 
 function BlogPostPage({ pageContent, blogPostContent }: BlogPostPageProps) {
   const { navbar, footer } = pageContent.fields;
+  const { title } = blogPostContent.fields;
 
   return (
     <>
-      <Meta />
+      <Meta title={title} />
       <Navbar content={navbar} />
       <Container className="px-8 pt-48 lg:pb-48">
         <Section>

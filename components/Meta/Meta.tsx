@@ -1,7 +1,11 @@
 import React from 'react';
 import Head from 'next/head';
 
-function Meta() {
+type MetaProps = {
+  title: string;
+};
+
+function Meta({ title }: MetaProps) {
   return (
     <Head>
       <link
@@ -22,7 +26,7 @@ function Meta() {
         href="/favicon-16x16.png"
       />
       <link rel="manifest" href="/site.webmanifest" />
-      <title>Karol Binkowski - Home</title>
+      <title>{title}</title>
     </Head>
   );
 }

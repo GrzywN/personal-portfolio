@@ -189,6 +189,9 @@ export interface IHero extends Entry<IHeroFields> {
 }
 
 export interface IHomeFields {
+  /** Title */
+  title: string;
+
   /** Navbar */
   navbar: INavbar;
 

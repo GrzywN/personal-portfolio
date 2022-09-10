@@ -18,7 +18,7 @@ function ThankYouPage({ content }: ThankYouProps) {
 
   return (
     <>
-      <Meta />
+      <Meta title={`Karol Binkowski - ${sectionThankYou.fields.title}`} />
       <Container>
         <Section className="grid place-items-center" id="thank-you">
           <ThankYou content={sectionThankYou} />
