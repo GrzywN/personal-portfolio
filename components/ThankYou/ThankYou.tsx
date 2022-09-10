@@ -44,7 +44,7 @@ function ThankYou({ content }: ThankYouProps) {
           </a>
         </Link>
       </header>
-      <div className="w-96">
+      <div className="max-w-[24rem]">
         <Image src={imageAppreciateIt} alt="" />
       </div>
     </>

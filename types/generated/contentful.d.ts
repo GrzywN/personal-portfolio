@@ -330,6 +330,9 @@ export interface IPageThankYouFields {
 
   /** Footer */
   footer: IFooter;
+
+  /** Navbar */
+  navbar: INavbar;
 }
 
 export interface IPageThankYou extends Entry<IPageThankYouFields> {

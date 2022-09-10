@@ -2,6 +2,7 @@ import React from 'react';
 import { createClient } from 'contentful';
 
 import Meta from '../components/Meta';
+import Navbar from '../components/Navbar';
 import Container from '../components/Container';
 import Section from '../components/Section';
 import ThankYou from '../components/ThankYou';
@@ -14,11 +15,13 @@ type ThankYouProps = {
 };
 
 function ThankYouPage({ content }: ThankYouProps) {
-  const { sectionThankYou, footer } = content.fields;
+  const { navbar, sectionThankYou, footer } = content.fields;
+  const { title } = sectionThankYou.fields;
 
   return (
     <>
-      <Meta title={`Karol Binkowski - ${sectionThankYou.fields.title}`} />
+      <Meta title={`Karol Binkowski - ${title}`} />
+      <Navbar content={navbar} />
       <Container>
         <Section className="grid place-items-center" id="thank-you">
           <ThankYou content={sectionThankYou} />
