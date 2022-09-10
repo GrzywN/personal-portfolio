@@ -4,14 +4,14 @@ import Image from 'next/image';
 
 import imageAppreciateIt from '../../public/illustrations/appreciate_it.svg';
 
-import type { SectionThankYouFields } from '../../types/content/models';
+import { ISectionThankYou } from '../../types/generated/contentful';
 
 type ThankYouProps = {
-  content: SectionThankYouFields;
+  content: ISectionThankYou;
 };
 
 function ThankYou({ content }: ThankYouProps) {
-  const { title, paragraph, linkText } = content;
+  const { title, paragraph, linkText } = content.fields;
 
   return (
     <>

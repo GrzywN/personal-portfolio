@@ -1,14 +1,14 @@
 import React from 'react';
 import ContactForm from '../ContactForm';
 
-import type { ContactFields } from '../../types/content/models';
+import { IContact } from '../../types/generated/contentful';
 
 type ContactProps = {
-  content: ContactFields;
+  content: IContact;
 };
 
 function Contact({ content }: ContactProps) {
-  const { title } = content;
+  const { title } = content.fields;
 
   return (
     <div

@@ -7,10 +7,10 @@ import Label from './Label';
 import ErrorLabel from './ErrorLabel';
 import Input from './Input';
 
-import type { ContactFields } from '../../types/content/models';
+import { IContact } from '../../types/generated/contentful';
 
 type ContactFormProps = {
-  content: ContactFields;
+  content: IContact;
 };
 
 function ContactForm({ content }: ContactFormProps) {
@@ -25,7 +25,7 @@ function ContactForm({ content }: ContactFormProps) {
     onEmptyField,
     onInvalidEmail,
     thankYouUrl,
-  } = content;
+  } = content.fields;
 
   const formik = useFormik({
     initialValues: {

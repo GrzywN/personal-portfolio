@@ -4,25 +4,22 @@ import Image from 'next/image';
 import { ChipList } from '../Chips';
 import { DemoButton, GitHubButton } from '../Buttons';
 
-import type {
-  PortfolioFields,
-  PortfolioItemField,
-} from '../../types/content/models';
+import { IPortfolio, IPortfolioItem } from '../../types/generated/contentful';
 
 type CardProps = {
-  generalContent: PortfolioFields;
-  itemContent: PortfolioItemField;
+  generalContent: IPortfolio;
+  itemContent: IPortfolioItem;
   reverseOrder: boolean;
 };
 
 function Card({ generalContent, itemContent, reverseOrder }: CardProps) {
   const { title, paragraph, image, demoUrl, sourceUrl, technologiesUsed } =
-    itemContent;
-  const { demo, source } = generalContent;
+    itemContent.fields;
+  const { demo, source } = generalContent.fields;
 
   const imageSrc = `https:${image.fields.file.url}`;
-  const imageWidth = image.fields.file.details.image.width;
-  const imageHeight = image.fields.file.details.image.height;
+  const imageWidth = image.fields.file.details.image!.width;
+  const imageHeight = image.fields.file.details.image!.height;
 
   return (
     <section

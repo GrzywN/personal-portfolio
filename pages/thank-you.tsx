@@ -7,14 +7,14 @@ import Section from '../components/Section';
 import ThankYou from '../components/ThankYou';
 import Footer from '../components/Footer';
 
-import type { ThankYouContent, ThankYouFields } from '../types/content/models';
+import { IPageThankYou } from '../types/generated/contentful';
 
 type ThankYouProps = {
-  content: ThankYouContent;
+  content: IPageThankYou;
 };
 
 function ThankYouPage({ content }: ThankYouProps) {
-  const { sectionThankYou, footer } = content;
+  const { sectionThankYou, footer } = content.fields;
 
   return (
     <>
@@ -39,17 +39,11 @@ async function getStaticProps({ locale }: { locale: string }) {
     content_type: 'pageThankYou',
     locale,
   });
-  const thankYouFields = entries.items[0].fields as ThankYouFields;
-
-  const sectionThankYou = thankYouFields.sectionThankYou.fields;
-  const footer = thankYouFields.footer.fields;
+  const content = entries.items[0] as IPageThankYou;
 
   return {
     props: {
-      content: {
-        sectionThankYou,
-        footer,
-      },
+      content,
     },
   };
 }

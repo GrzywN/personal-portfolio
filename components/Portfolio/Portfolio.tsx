@@ -1,18 +1,15 @@
 import React from 'react';
 import Card from './Card';
 
-import type {
-  PortfolioFields,
-  PortfolioItemFields,
-} from '../../types/content/models';
+import { IPortfolio, IPortfolioItem } from '../../types/generated/contentful';
 
 type PortfolioProps = {
-  generalContent: PortfolioFields;
-  itemsContent: PortfolioItemFields;
+  generalContent: IPortfolio;
+  itemsContent: IPortfolioItem[];
 };
 
 function Portfolio({ generalContent, itemsContent }: PortfolioProps) {
-  const { title, paragraph } = generalContent;
+  const { title, paragraph } = generalContent.fields;
 
   return (
     <div
@@ -44,14 +41,17 @@ function Portfolio({ generalContent, itemsContent }: PortfolioProps) {
         </p>
       </header>
       <div className="grid gap-20">
-        {itemsContent.map((item, index) => (
-          <Card
-            key={item.title}
-            itemContent={item}
-            generalContent={generalContent}
-            reverseOrder={index % 2 === 1}
-          />
-        ))}
+        {itemsContent.map(
+          (item, index) =>
+            item.fields && (
+              <Card
+                key={item.fields.title}
+                generalContent={generalContent}
+                itemContent={item}
+                reverseOrder={index % 2 === 1}
+              />
+            )
+        )}
       </div>
     </div>
   );

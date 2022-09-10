@@ -18,17 +18,17 @@ import iconFigma from '../../public/icons/skills/figma.svg';
 import iconGit from '../../public/icons/skills/git.svg';
 import iconLinux from '../../public/icons/skills/linux.svg';
 
-import type { SkillsFields } from '../../types/content/models';
+import type { ISkills } from '../../types/generated/contentful';
 
 type SkillsProps = {
-  content: SkillsFields;
+  content: ISkills;
 };
 
 function Skills({ content }: SkillsProps) {
-  const { title, paragraph } = content;
+  const { title, paragraph } = content.fields;
 
   return (
-    <div className="grid gap-24 px-8">
+    <section className="grid gap-24 px-8" title={title}>
       <header className="text-center">
         <h2
           className="
@@ -70,7 +70,7 @@ function Skills({ content }: SkillsProps) {
         <GridItem src={iconGit} name="Git" />
         <GridItem src={iconLinux} name="Linux" />
       </div>
-    </div>
+    </section>
   );
 }
 

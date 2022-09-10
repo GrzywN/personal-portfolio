@@ -12,46 +12,38 @@ import Portfolio from '../components/Portfolio';
 import Contact from '../components/Contact';
 import Footer from '../components/Footer';
 
-import type { HomeFields, HomeContent } from '../types/content/models';
+import { IHomeFields } from '../types/generated/contentful';
 
 type HomeProps = {
-  content: HomeContent;
+  content: IHomeFields;
 };
 
 function Home({ content }: HomeProps) {
-  const {
-    navbar,
-    hero,
-    about,
-    skills,
-    portfolio,
-    portfolioItems,
-    contact,
-    footer,
-  } = content;
-
   return (
     <>
       <Meta />
-      <Navbar content={navbar} />
+      <Navbar content={content.navbar} />
       <Container className="lg:bg-container lg:bg-no-repeat">
         <Section id="hero">
-          <Hero content={hero} />
+          <Hero content={content.hero} />
         </Section>
         <Section id="about" className="bg-about">
-          <About content={about} />
+          <About content={content.about} />
         </Section>
         <Section id="skills">
-          <Skills content={skills} />
+          <Skills content={content.skills} />
         </Section>
         <Section id="portfolio" skew skewedBgClassName="bg-sky-blue">
-          <Portfolio generalContent={portfolio} itemsContent={portfolioItems} />
+          <Portfolio
+            generalContent={content.portfolio}
+            itemsContent={content.portfolioItems}
+          />
         </Section>
         <Section id="contact">
-          <Contact content={contact} />
+          <Contact content={content.contact} />
         </Section>
       </Container>
-      <Footer content={footer} />
+      <Footer content={content.footer} />
     </>
   );
 }
@@ -63,30 +55,11 @@ async function getStaticProps({ locale }: { locale: string }) {
   const client = createClient({ space, accessToken });
 
   const entries = await client.getEntries({ content_type: 'home', locale });
-  const homeFields = entries.items[0].fields as HomeFields;
-
-  const navbar = homeFields.navbar.fields;
-  const hero = homeFields.hero.fields;
-  const about = homeFields.about.fields;
-  const skills = homeFields.skills.fields;
-  const portfolio = homeFields.portfolio.fields;
-  const contact = homeFields.contact.fields;
-  const footer = homeFields.footer.fields;
-
-  const portfolioItems = homeFields.portfolioItems.map((item) => item.fields);
+  const content = entries.items[0].fields as IHomeFields;
 
   return {
     props: {
-      content: {
-        navbar,
-        hero,
-        about,
-        skills,
-        portfolio,
-        portfolioItems,
-        contact,
-        footer,
-      },
+      content,
     },
   };
 }

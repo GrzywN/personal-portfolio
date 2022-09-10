@@ -5,10 +5,10 @@ import Nav from './Nav';
 import Logo from './Logo';
 import Cta from '../Cta';
 
-import type { NavbarFields } from '../../types/content/models';
+import { INavbar } from '../../types/generated/contentful';
 
 type NavbarProps = {
-  content: NavbarFields;
+  content: INavbar;
 };
 
 function Navbar({ content }: NavbarProps) {
@@ -18,7 +18,7 @@ function Navbar({ content }: NavbarProps) {
     setIsOpen(false);
   };
 
-  const { cta } = content;
+  const { cta } = content.fields;
 
   return (
     <header className="fixed top-4 z-50 grid w-full place-items-center px-8">
@@ -33,7 +33,7 @@ function Navbar({ content }: NavbarProps) {
           className="
           ml-auto hidden
           lg:inline"
-          destination="#contact"
+          destination="/#contact"
           text={cta}
         />
         <div className="lg:hidden">

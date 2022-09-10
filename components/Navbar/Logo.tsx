@@ -7,7 +7,7 @@ type LogoProps = {
 
 function Logo({ onClick }: LogoProps) {
   return (
-    <Link href="#hero" passHref>
+    <Link href="/#hero" passHref>
       <a
         className="
         cursor-pointer text-white

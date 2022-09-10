@@ -1,16 +1,16 @@
 import React from 'react';
 import NavItem from './NavItem';
 
-import type { NavbarFields } from '../../types/content/models';
+import { INavbar } from '../../types/generated/contentful';
 
 type NavProps = {
   onClick: () => void;
   isOpen: boolean;
-  content: NavbarFields;
+  content: INavbar;
 };
 
 function Nav({ onClick, isOpen, content }: NavProps) {
-  const { about, blog, skills, portfolio } = content;
+  const { about, blog, skills, portfolio } = content.fields;
 
   return (
     <nav
@@ -29,19 +29,19 @@ function Nav({ onClick, isOpen, content }: NavProps) {
         <NavItem
           onClick={onClick}
           title={about}
-          destination="#about"
+          destination="/#about"
           index="01"
         />
         <NavItem
           onClick={onClick}
           title={skills}
-          destination="#skills"
+          destination="/#skills"
           index="02"
         />
         <NavItem
           onClick={onClick}
           title={portfolio}
-          destination="#portfolio"
+          destination="/#portfolio"
           index="03"
         />
         <NavItem

@@ -5,7 +5,7 @@ type SectionProps = {
   children: React.ReactNode;
   skew?: boolean;
   skewedBgClassName?: string;
-  id: string;
+  id?: string;
 };
 
 function Section({
@@ -35,6 +35,7 @@ Section.defaultProps = {
   className: '',
   skew: false,
   skewedBgClassName: '',
+  id: '',
 };
 
 export default Section;

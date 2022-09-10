@@ -4,14 +4,14 @@ import Cta from '../Cta';
 
 import imageWelcoming from '../../public/illustrations/welcoming.svg';
 
-import type { HeroFields } from '../../types/content/models';
+import { IHero } from '../../types/generated/contentful';
 
 type HeroProps = {
-  content: HeroFields;
+  content: IHero;
 };
 
 function Hero({ content }: HeroProps) {
-  const { title, paragraph, cta } = content;
+  const { title, paragraph, cta } = content.fields;
   const splitTitles = title.split('.', 2).map((e) => `${e.trim()}.`);
 
   return (

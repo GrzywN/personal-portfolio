@@ -4,14 +4,14 @@ import Cta from '../Cta';
 
 import imageFeelingProud from '../../public/illustrations/feeling_proud.svg';
 
-import type { AboutFields } from '../../types/content/models';
+import { IAbout } from '../../types/generated/contentful';
 
 type AboutProps = {
-  content: AboutFields;
+  content: IAbout;
 };
 
 function About({ content }: AboutProps) {
-  const { title, paragraph, cta } = content;
+  const { title, paragraph, cta } = content.fields;
   const paragraphs = paragraph.split('\n').map((e) => e.trim());
 
   return (

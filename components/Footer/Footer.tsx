@@ -5,10 +5,10 @@ import githubLogo from '../../public/icons/logo-github.svg';
 import linkedinLogo from '../../public/icons/logo-linkedin.svg';
 import twitterLogo from '../../public/icons/logo-twitter.svg';
 
-import type { FooterFields } from '../../types/content/models';
+import type { IFooter } from '../../types/generated/contentful';
 
 type FooterProps = {
-  content: FooterFields;
+  content: IFooter;
 };
 
 function Footer({ content }: FooterProps) {
@@ -23,7 +23,7 @@ function Footer({ content }: FooterProps) {
     twitterUrl,
     twitterTitle,
     twitterIconAlt,
-  } = content;
+  } = content.fields;
 
   return (
     <footer className="bg-darker-grey">
