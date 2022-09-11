@@ -355,6 +355,34 @@ export interface IPageBlogPost extends Entry<IPageBlogPostFields> {
   };
 }
 
+export interface IPageNotFoundFields {
+  /** Navbar */
+  navbar: INavbar;
+
+  /** Section Not Found */
+  sectionNotFound: ISectionNotFound;
+
+  /** Footer */
+  footer: IFooter;
+}
+
+export interface IPageNotFound extends Entry<IPageNotFoundFields> {
+  sys: {
+    id: string;
+    type: string;
+    createdAt: string;
+    updatedAt: string;
+    locale: string;
+    contentType: {
+      sys: {
+        id: 'pageNotFound';
+        linkType: 'ContentType';
+        type: 'Link';
+      };
+    };
+  };
+}
+
 export interface IPageThankYouFields {
   /** Section - Thank you */
   sectionThankYou: ISectionThankYou;
@@ -479,6 +507,31 @@ export interface ISectionBlog extends Entry<ISectionBlogFields> {
   };
 }
 
+export interface ISectionNotFoundFields {
+  /** title */
+  title: string;
+
+  /** linkText */
+  linkText: string;
+}
+
+export interface ISectionNotFound extends Entry<ISectionNotFoundFields> {
+  sys: {
+    id: string;
+    type: string;
+    createdAt: string;
+    updatedAt: string;
+    locale: string;
+    contentType: {
+      sys: {
+        id: 'sectionNotFound';
+        linkType: 'ContentType';
+        type: 'Link';
+      };
+    };
+  };
+}
+
 export interface ISectionThankYouFields {
   /** Title */
   title: string;
@@ -543,10 +596,12 @@ export type CONTENT_TYPE =
   | 'pageAbout'
   | 'pageBlog'
   | 'pageBlogPost'
+  | 'pageNotFound'
   | 'pageThankYou'
   | 'portfolio'
   | 'portfolioItem'
   | 'sectionBlog'
+  | 'sectionNotFound'
   | 'sectionThankYou'
   | 'skills';
 
