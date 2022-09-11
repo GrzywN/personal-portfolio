@@ -47,7 +47,7 @@ function Nav({ onClick, isOpen, content }: NavProps) {
         <NavItem
           onClick={onClick}
           title={blog}
-          destination="/blog"
+          destination="/blog#blog"
           index="04"
         />
       </ul>
