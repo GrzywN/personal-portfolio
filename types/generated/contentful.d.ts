@@ -511,6 +511,9 @@ export interface ISectionNotFoundFields {
   /** title */
   title: string;
 
+  /** paragraph */
+  paragraph: string;
+
   /** linkText */
   linkText: string;
 }

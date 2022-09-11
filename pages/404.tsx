@@ -20,7 +20,7 @@ function NotFoundPage({ content, locale }: NotFoundPageProps) {
 
   return (
     <>
-      <Meta title={`Karol Binkowski - ${title}`} locale={locale} />
+      <Meta title={title} locale={locale} />
       <Navbar content={navbar} />
       <Container className="px-8 py-24 lg:pb-24">
         <Section className="grid place-items-center" id="not-found">

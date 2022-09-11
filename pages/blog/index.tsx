@@ -46,7 +46,7 @@ async function getStaticProps({ locale }: { locale: string }) {
       content,
       locale,
     },
-    revalidate: 30,
+    revalidate: 1200,
   };
 }
 

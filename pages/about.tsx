@@ -6,7 +6,7 @@ import Meta from '../components/Meta';
 import Navbar from '../components/Navbar';
 import Container from '../components/Container';
 import Section from '../components/Section';
-import Article from '../components/Article';
+import { Article } from '../components/Article';
 import Footer from '../components/Footer';
 
 type AboutPageProps = {
@@ -21,7 +21,7 @@ function AboutPage({ content, locale }: AboutPageProps) {
     <>
       <Meta title={`Karol Binkowski - ${title}`} locale={locale} />
       <Navbar content={navbar} />
-      <Container>
+      <Container className="px-8 pt-48 lg:pb-48">
         <Section className="grid place-items-center" id="thank-you">
           <Article title={title} content={aboutContent} />
         </Section>
@@ -48,6 +48,7 @@ async function getStaticProps({ locale }: { locale: string }) {
       content,
       locale,
     },
+    revalidate: 1200,
   };
 }
 

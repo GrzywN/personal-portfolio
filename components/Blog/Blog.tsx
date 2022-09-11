@@ -44,10 +44,10 @@ function Blog({ generalContent, blogPostContent }: BlogProps) {
             (item) =>
               item.fields && (
                 <li
-                  className="flex h-24 w-full items-center justify-between rounded-md bg-light-grey py-4 px-6"
+                  className="flex h-24 w-full items-center justify-between gap-4 rounded-md bg-light-grey py-4 px-6"
                   key={item.fields.slug}
                 >
-                  <span className="text-xl text-white">
+                  <span className="text-sm text-white sm:text-base md:text-lg lg:text-xl">
                     {item.fields.title}
                   </span>
                   <Cta destination={`/blog/${item.fields.slug}`} text={cta} />

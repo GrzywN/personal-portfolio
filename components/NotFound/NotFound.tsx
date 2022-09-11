@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useRouter } from 'next/router';
 import Link from 'next/link';
 import Image from 'next/image';
 import { ISectionNotFound } from '../../types/generated/contentful';
@@ -10,7 +11,15 @@ type NotFoundProps = {
 };
 
 function NotFound({ content }: NotFoundProps) {
-  const { title, linkText } = content.fields;
+  const { title, paragraph, linkText } = content.fields;
+
+  const router = useRouter();
+
+  useEffect(() => {
+    setTimeout(() => {
+      router.push('/');
+    }, 4000);
+  });
 
   return (
     <>
@@ -22,10 +31,19 @@ function NotFound({ content }: NotFoundProps) {
         >
           {title}
         </h1>
+        <p
+          className="
+          mt-3 text-sm text-gray-400 
+          sm:mt-4 sm:text-base
+          md:text-lg
+          lg:text-xl"
+        >
+          {paragraph}
+        </p>
         <Link href="/" passHref>
           <a
             className="
-            mt-6 text-sm text-white underline 
+            mt-3 text-sm text-white underline 
             sm:text-base
             md:text-lg
             lg:text-xl"
@@ -40,4 +58,5 @@ function NotFound({ content }: NotFoundProps) {
     </>
   );
 }
+
 export default NotFound;

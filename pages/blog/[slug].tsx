@@ -12,7 +12,7 @@ import Meta from '../../components/Meta';
 import Navbar from '../../components/Navbar';
 import Container from '../../components/Container';
 import Section from '../../components/Section';
-import Article from '../../components/Article';
+import { Article, ArticleSkeleton } from '../../components/Article';
 import Footer from '../../components/Footer';
 
 type BlogPostPageProps = {
@@ -26,6 +26,25 @@ function BlogPostPage({
   blogPostContent,
   locale,
 }: BlogPostPageProps) {
+  if (pageContent == null || blogPostContent == null) {
+    return (
+      <>
+        <Meta
+          title={`
+            ${locale === 'pl-PL' ? 'Ładowanie...' : ''}
+            ${locale === 'en-US' ? 'Loading...' : ''}
+          `}
+          locale={locale}
+        />
+        <Container className="px-8 pt-48 lg:pb-48">
+          <Section>
+            <ArticleSkeleton />
+          </Section>
+        </Container>
+      </>
+    );
+  }
+
   const { navbar, footer } = pageContent.fields;
   const { title, content } = blogPostContent.fields;
 
@@ -48,13 +67,13 @@ const accessToken = process.env.CONTENTFUL_ACCESS_TOKEN!;
 const client = createClient({ space, accessToken });
 
 async function getStaticPaths({ locales }: { locales: string[] }) {
-  const entries = (await client.getEntries({
+  const { items } = (await client.getEntries({
     content_type: 'blogPosts',
   })) as EntryCollection<IBlogPostsFields>;
 
   const paths = locales
     .map((locale) => {
-      return entries.items.map((item) => {
+      return items.map((item) => {
         return {
           params: {
             slug: item.fields.slug,
@@ -67,7 +86,7 @@ async function getStaticPaths({ locales }: { locales: string[] }) {
 
   return {
     paths,
-    fallback: false,
+    fallback: true,
   };
 }
 
@@ -88,12 +107,22 @@ async function getStaticProps({ params, locale }: getStaticPropsContext) {
     locale,
   })) as EntryCollection<IBlogPostsFields>;
 
+  if (!blogPostContent.items.length) {
+    return {
+      redirect: {
+        destination: '/404',
+        permanent: false,
+      },
+    };
+  }
+
   return {
     props: {
       pageContent: pageContent.items[0],
       blogPostContent: blogPostContent.items[0],
       locale,
     },
+    revalidate: 1200,
   };
 }
 
