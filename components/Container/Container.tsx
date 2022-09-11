@@ -1,6 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import ScrollToTop from 'react-scroll-to-top';
+
 import iconArrow from '../../public/icons/arrow-up-outline.svg';
 
 type ContainerProps = {

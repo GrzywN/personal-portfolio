@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
 import { Twirl as Hamburger } from 'hamburger-react';
+import { INavbar } from '../../types/generated/contentful';
 
 import Nav from './Nav';
 import Logo from './Logo';
 import Cta from '../Cta';
-
-import { INavbar } from '../../types/generated/contentful';
 
 type NavbarProps = {
   content: INavbar;

@@ -1,11 +1,11 @@
 import React from 'react';
+import { IFooter } from '../../types/generated/contentful';
+
 import SocialListItem from './SocialListItem';
 
 import githubLogo from '../../public/icons/logo-github.svg';
 import linkedinLogo from '../../public/icons/logo-linkedin.svg';
 import twitterLogo from '../../public/icons/logo-twitter.svg';
-
-import type { IFooter } from '../../types/generated/contentful';
 
 type FooterProps = {
   content: IFooter;

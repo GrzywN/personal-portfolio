@@ -1,10 +1,9 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { ISectionThankYou } from '../../types/generated/contentful';
 
 import imageAppreciateIt from '../../public/illustrations/appreciate_it.svg';
-
-import { ISectionThankYou } from '../../types/generated/contentful';
 
 type ThankYouProps = {
   content: ISectionThankYou;

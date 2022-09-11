@@ -1,7 +1,7 @@
 import React from 'react';
-import Card from './Card';
-
 import { IPortfolio, IPortfolioItem } from '../../types/generated/contentful';
+
+import Card from './Card';
 
 type PortfolioProps = {
   generalContent: IPortfolio;

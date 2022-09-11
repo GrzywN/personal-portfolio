@@ -1,5 +1,6 @@
 import React from 'react';
 import { createClient } from 'contentful';
+import { IHome } from '../types/generated/contentful';
 
 import Meta from '../components/Meta';
 import Hero from '../components/Hero';
@@ -11,8 +12,6 @@ import Skills from '../components/Skills';
 import Portfolio from '../components/Portfolio';
 import Contact from '../components/Contact';
 import Footer from '../components/Footer';
-
-import { IHome } from '../types/generated/contentful';
 
 type HomeProps = {
   content: IHome;

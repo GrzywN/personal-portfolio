@@ -1,7 +1,7 @@
 import React from 'react';
-import NavItem from './NavItem';
-
 import { INavbar } from '../../types/generated/contentful';
+
+import NavItem from './NavItem';
 
 type NavProps = {
   onClick: () => void;

@@ -1,10 +1,10 @@
 import React from 'react';
 import Image from 'next/image';
+import { IHero } from '../../types/generated/contentful';
+
 import Cta from '../Cta';
 
 import imageWelcoming from '../../public/illustrations/welcoming.svg';
-
-import { IHero } from '../../types/generated/contentful';
 
 type HeroProps = {
   content: IHero;

@@ -1,13 +1,13 @@
 import React from 'react';
 import { useFormik } from 'formik';
 import * as yup from 'yup';
+import { IContact } from '../../types/generated/contentful';
+
 import Submit from './Submit';
 import TextArea from './TextArea';
 import Label from './Label';
 import ErrorLabel from './ErrorLabel';
 import Input from './Input';
-
-import { IContact } from '../../types/generated/contentful';
 
 type ContactFormProps = {
   content: IContact;

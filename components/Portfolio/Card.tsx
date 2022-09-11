@@ -1,10 +1,9 @@
 import React from 'react';
 import Image from 'next/image';
+import { IPortfolio, IPortfolioItem } from '../../types/generated/contentful';
 
 import { ChipList } from '../Chips';
 import { DemoButton, GitHubButton } from '../Buttons';
-
-import { IPortfolio, IPortfolioItem } from '../../types/generated/contentful';
 
 type CardProps = {
   generalContent: IPortfolio;

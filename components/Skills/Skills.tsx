@@ -1,4 +1,6 @@
 import React from 'react';
+import { ISkills } from '../../types/generated/contentful';
+
 import GridItem from './GridItem';
 
 import iconHtml from '../../public/icons/skills/html5.svg';
@@ -17,8 +19,6 @@ import iconBabel from '../../public/icons/skills/babeljs.svg';
 import iconFigma from '../../public/icons/skills/figma.svg';
 import iconGit from '../../public/icons/skills/git.svg';
 import iconLinux from '../../public/icons/skills/linux.svg';
-
-import type { ISkills } from '../../types/generated/contentful';
 
 type SkillsProps = {
   content: ISkills;

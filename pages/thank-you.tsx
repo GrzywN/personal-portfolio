@@ -1,5 +1,6 @@
 import React from 'react';
 import { createClient } from 'contentful';
+import { IPageThankYou } from '../types/generated/contentful';
 
 import Meta from '../components/Meta';
 import Navbar from '../components/Navbar';
@@ -7,8 +8,6 @@ import Container from '../components/Container';
 import Section from '../components/Section';
 import ThankYou from '../components/ThankYou';
 import Footer from '../components/Footer';
-
-import { IPageThankYou } from '../types/generated/contentful';
 
 type ThankYouProps = {
   content: IPageThankYou;

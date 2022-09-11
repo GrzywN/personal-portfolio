@@ -1,10 +1,10 @@
 import React from 'react';
 import Image from 'next/image';
+import { IAbout } from '../../types/generated/contentful';
+
 import Cta from '../Cta';
 
 import imageFeelingProud from '../../public/illustrations/feeling_proud.svg';
-
-import { IAbout } from '../../types/generated/contentful';
 
 type AboutProps = {
   content: IAbout;

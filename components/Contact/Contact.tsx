@@ -1,7 +1,7 @@
 import React from 'react';
-import ContactForm from '../ContactForm';
-
 import { IContact } from '../../types/generated/contentful';
+
+import ContactForm from '../ContactForm';
 
 type ContactProps = {
   content: IContact;

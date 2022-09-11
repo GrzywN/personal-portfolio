@@ -1,9 +1,10 @@
 /* eslint-disable react/jsx-props-no-spreading */
 
 import React from 'react';
-import { motion } from 'framer-motion';
-import '../styles/globals.css';
 import type { AppProps } from 'next/app';
+import { motion } from 'framer-motion';
+
+import '../styles/globals.css';
 
 function MyApp({ Component, pageProps, router }: AppProps) {
   return (

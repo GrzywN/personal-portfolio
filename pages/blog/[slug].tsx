@@ -1,5 +1,11 @@
 import React from 'react';
 import { createClient, EntryCollection } from 'contentful';
+import {
+  IPageBlogPost,
+  IPageBlogPostFields,
+  IBlogPosts,
+  IBlogPostsFields,
+} from '../../types/generated/contentful';
 
 import Meta from '../../components/Meta';
 import Navbar from '../../components/Navbar';
@@ -7,13 +13,6 @@ import Container from '../../components/Container';
 import Section from '../../components/Section';
 import Article from '../../components/Article';
 import Footer from '../../components/Footer';
-
-import {
-  IPageBlogPost,
-  IPageBlogPostFields,
-  IBlogPosts,
-  IBlogPostsFields,
-} from '../../types/generated/contentful';
 
 type BlogPostPageProps = {
   pageContent: IPageBlogPost;

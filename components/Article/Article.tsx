@@ -1,10 +1,10 @@
 import React from 'react';
-import { BLOCKS, Document } from '@contentful/rich-text-types';
+import Image from 'next/image';
 import {
   documentToReactComponents,
   CommonNode,
 } from '@contentful/rich-text-react-renderer';
-import Image from 'next/image';
+import { BLOCKS, Document } from '@contentful/rich-text-types';
 
 const renderOption = {
   renderNode: {

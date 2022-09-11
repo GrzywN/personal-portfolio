@@ -1,4 +1,5 @@
 import React from 'react';
+
 import Chip from './Chip';
 
 type ChipListProps = {

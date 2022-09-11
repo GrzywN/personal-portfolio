@@ -1,8 +1,7 @@
 import React from 'react';
+import { ISectionBlog, IBlogPosts } from '../../types/generated/contentful';
 
 import Cta from '../Cta';
-
-import { ISectionBlog, IBlogPosts } from '../../types/generated/contentful';
 
 type BlogProps = {
   generalContent: ISectionBlog;
