@@ -29,8 +29,8 @@ function Footer({ content }: FooterProps) {
     <footer className="bg-darker-grey">
       <div
         className="
-        mx-auto flex max-w-padding-container flex-col-reverse items-center gap-y-4 py-12 px-8
-        md:justify-between 
+        mx-auto flex max-w-padding-container flex-col-reverse items-center gap-8 px-8 py-32
+        md:justify-between md:gap-4 md:py-12
         lg:flex-row"
       >
         <p className="text-center font-medium text-gray-400">

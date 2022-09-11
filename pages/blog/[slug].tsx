@@ -29,8 +29,6 @@ function BlogPostPage({
   const { navbar, footer } = pageContent.fields;
   const { title, content } = blogPostContent.fields;
 
-  console.log(title);
-
   return (
     <>
       <Meta title={title} locale={locale} />

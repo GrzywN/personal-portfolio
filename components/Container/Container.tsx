@@ -18,7 +18,9 @@ function Container({ className, children }: ContainerProps) {
     >
       {children}
       <ScrollToTop
-        className="!rounded-full !bg-light-grey !p-2 !shadow-md"
+        className="
+        !invisible
+        md:!visible md:!right-6 md:!bottom-6 md:!rounded md:!bg-light-grey md:!p-2 md:!shadow-md"
         smooth
         component={<Image src={iconArrow} alt="" />}
       />

@@ -4,6 +4,7 @@ import { INavbar } from '../../types/generated/contentful';
 
 import Nav from './Nav';
 import Logo from './Logo';
+import LocaleSwitcher from '../LocaleSwitcher';
 import Cta from '../Cta';
 
 type NavbarProps = {
@@ -28,13 +29,21 @@ function Navbar({ content }: NavbarProps) {
       >
         <Logo onClick={clickHandler} />
         <Nav onClick={clickHandler} isOpen={isOpen} content={content} />
-        <Cta
+        <div
           className="
-          ml-auto hidden
-          lg:inline"
-          destination="/#contact"
-          text={cta}
-        />
+          fixed bottom-6 right-6
+          md:left-6
+          lg:relative lg:inset-0 lg:ml-auto lg:flex lg:items-center lg:gap-2"
+        >
+          <LocaleSwitcher />
+          <Cta
+            className="
+            hidden
+            lg:inline"
+            destination="/#contact"
+            text={cta}
+          />
+        </div>
         <div className="lg:hidden">
           <Hamburger
             rounded
