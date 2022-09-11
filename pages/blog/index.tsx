@@ -1,6 +1,6 @@
 import React from 'react';
 import { createClient } from 'contentful';
-import { IPageBlog } from '../../types/generated/contentful';
+import { IPageBlog, LOCALE_CODE } from '../../types/generated/contentful';
 
 import Meta from '../../components/Meta';
 import Navbar from '../../components/Navbar';
@@ -11,14 +11,16 @@ import Footer from '../../components/Footer';
 
 type BlogPageProps = {
   content: IPageBlog;
+  locale: LOCALE_CODE;
 };
 
-function BlogPage({ content }: BlogPageProps) {
+function BlogPage({ content, locale }: BlogPageProps) {
   const { navbar, sectionBlog, footer, blogPosts } = content.fields;
+  const { title } = sectionBlog.fields;
 
   return (
     <>
-      <Meta title={`Karol Binkowski - ${sectionBlog.fields.title}`} />
+      <Meta title={`Karol Binkowski - ${title}`} locale={locale} />
       <Navbar content={navbar} />
       <Container>
         <Section id="blog">
@@ -42,6 +44,7 @@ async function getStaticProps({ locale }: { locale: string }) {
   return {
     props: {
       content,
+      locale,
     },
     revalidate: 30,
   };

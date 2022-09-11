@@ -1,6 +1,6 @@
 import React from 'react';
 import { createClient } from 'contentful';
-import { IHome } from '../types/generated/contentful';
+import { IHome, LOCALE_CODE } from '../types/generated/contentful';
 
 import Meta from '../components/Meta';
 import Hero from '../components/Hero';
@@ -15,9 +15,10 @@ import Footer from '../components/Footer';
 
 type HomeProps = {
   content: IHome;
+  locale: LOCALE_CODE;
 };
 
-function Home({ content }: HomeProps) {
+function Home({ content, locale }: HomeProps) {
   const {
     title,
     navbar,
@@ -32,7 +33,7 @@ function Home({ content }: HomeProps) {
 
   return (
     <>
-      <Meta title={`Karol Binkowski - ${title}`} />
+      <Meta title={`Karol Binkowski - ${title}`} locale={locale} />
       <Navbar content={navbar} />
       <Container className="lg:bg-container lg:bg-no-repeat">
         <Section id="hero">
@@ -68,6 +69,7 @@ async function getStaticProps({ locale }: { locale: string }) {
   return {
     props: {
       content,
+      locale,
     },
   };
 }

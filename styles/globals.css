@@ -5,8 +5,9 @@
 
 html {
   scroll-behavior: smooth;
-  background-color: hsl(240, 6%, 10%);
+
   font-family: Inter, sans-serif;
+  background-color: hsl(240, 6%, 10%);
 }
 
 /* *,

@@ -1,6 +1,6 @@
 import React from 'react';
 import { createClient } from 'contentful';
-import { IPageNotFound } from '../types/generated/contentful';
+import { IPageNotFound, LOCALE_CODE } from '../types/generated/contentful';
 
 import Meta from '../components/Meta';
 import Navbar from '../components/Navbar';
@@ -11,15 +11,16 @@ import Footer from '../components/Footer';
 
 type NotFoundPageProps = {
   content: IPageNotFound;
+  locale: LOCALE_CODE;
 };
 
-function NotFoundPage({ content }: NotFoundPageProps) {
+function NotFoundPage({ content, locale }: NotFoundPageProps) {
   const { navbar, sectionNotFound, footer } = content.fields;
   const { title } = sectionNotFound.fields;
 
   return (
     <>
-      <Meta title={`Karol Binkowski - ${title}`} />
+      <Meta title={`Karol Binkowski - ${title}`} locale={locale} />
       <Navbar content={navbar} />
       <Container className="px-8 py-24 lg:pb-24">
         <Section className="grid place-items-center" id="not-found">
@@ -46,6 +47,7 @@ async function getStaticProps({ locale }: { locale: string }) {
   return {
     props: {
       content,
+      locale,
     },
   };
 }

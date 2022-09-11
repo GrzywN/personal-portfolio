@@ -5,6 +5,7 @@ import {
   IPageBlogPostFields,
   IBlogPosts,
   IBlogPostsFields,
+  LOCALE_CODE,
 } from '../../types/generated/contentful';
 
 import Meta from '../../components/Meta';
@@ -17,15 +18,22 @@ import Footer from '../../components/Footer';
 type BlogPostPageProps = {
   pageContent: IPageBlogPost;
   blogPostContent: IBlogPosts;
+  locale: LOCALE_CODE;
 };
 
-function BlogPostPage({ pageContent, blogPostContent }: BlogPostPageProps) {
+function BlogPostPage({
+  pageContent,
+  blogPostContent,
+  locale,
+}: BlogPostPageProps) {
   const { navbar, footer } = pageContent.fields;
   const { title, content } = blogPostContent.fields;
 
+  console.log(title);
+
   return (
     <>
-      <Meta title={title} />
+      <Meta title={title} locale={locale} />
       <Navbar content={navbar} />
       <Container className="px-8 pt-48 lg:pb-48">
         <Section>
@@ -86,6 +94,7 @@ async function getStaticProps({ params, locale }: getStaticPropsContext) {
     props: {
       pageContent: pageContent.items[0],
       blogPostContent: blogPostContent.items[0],
+      locale,
     },
   };
 }

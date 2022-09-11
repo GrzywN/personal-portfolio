@@ -1,6 +1,6 @@
 import React from 'react';
 import { createClient } from 'contentful';
-import { IPageAbout } from '../types/generated/contentful';
+import { IPageAbout, LOCALE_CODE } from '../types/generated/contentful';
 
 import Meta from '../components/Meta';
 import Navbar from '../components/Navbar';
@@ -11,14 +11,15 @@ import Footer from '../components/Footer';
 
 type AboutPageProps = {
   content: IPageAbout;
+  locale: LOCALE_CODE;
 };
 
-function AboutPage({ content }: AboutPageProps) {
+function AboutPage({ content, locale }: AboutPageProps) {
   const { navbar, title, content: aboutContent, footer } = content.fields;
 
   return (
     <>
-      <Meta title={`Karol Binkowski - ${title}`} />
+      <Meta title={`Karol Binkowski - ${title}`} locale={locale} />
       <Navbar content={navbar} />
       <Container>
         <Section className="grid place-items-center" id="thank-you">
@@ -45,6 +46,7 @@ async function getStaticProps({ locale }: { locale: string }) {
   return {
     props: {
       content,
+      locale,
     },
   };
 }
