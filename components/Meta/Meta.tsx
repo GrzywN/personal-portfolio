@@ -35,6 +35,7 @@ function Meta({ title, locale }: MetaProps) {
       <meta name="title" content="Karol Binkowski" />
       <meta name="author" content="Karol Binkowski" />
       <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <meta name="robots" content="index, follow" />
 
       <link
@@ -55,6 +56,7 @@ function Meta({ title, locale }: MetaProps) {
         href="/favicon-16x16.png"
       />
       <link rel="manifest" href="/site.webmanifest" />
+
       <title>{title}</title>
     </Head>
   );
