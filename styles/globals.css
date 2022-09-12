@@ -1,17 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;500;800&family=M+PLUS+Rounded+1c:wght@700&display=swap');
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-html {
-  scroll-behavior: smooth;
-
-  font-family: Inter, sans-serif;
-  background-color: hsl(240, 6%, 10%);
+@layer base {
+  html {
+    @apply font-inter scroll-smooth bg-dark-grey;
+  }
 }
-
-/* *,
-*::before,
-*::after {
-  outline: 1px dashed indigo;
-} */
