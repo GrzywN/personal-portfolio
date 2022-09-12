@@ -2,6 +2,8 @@ import React from 'react';
 import Image from 'next/image';
 import ScrollToTop from 'react-scroll-to-top';
 
+import LocaleSwitcher from '../LocaleSwitcher';
+
 import iconArrow from '../../public/icons/arrow-up-outline.svg';
 
 type ContainerProps = {
@@ -24,6 +26,14 @@ function Container({ className, children }: ContainerProps) {
         smooth
         component={<Image src={iconArrow} alt="" />}
       />
+      <div
+        className="
+        fixed bottom-6 right-6 z-50
+        md:left-6 md:right-auto
+        lg:hidden"
+      >
+        <LocaleSwitcher />
+      </div>
     </main>
   );
 }

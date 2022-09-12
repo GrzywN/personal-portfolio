@@ -21,7 +21,7 @@ function Navbar({ content }: NavbarProps) {
   const { cta } = content.fields;
 
   return (
-    <header className="fixed top-4 z-50 grid w-full place-items-center px-8">
+    <header className="fixed top-4 z-40 grid w-full place-items-center px-8">
       <div
         className="
         flex h-16 w-full max-w-padding-container items-center
@@ -31,9 +31,8 @@ function Navbar({ content }: NavbarProps) {
         <Nav onClick={clickHandler} isOpen={isOpen} content={content} />
         <div
           className="
-          fixed bottom-6 right-6
-          md:left-6
-          lg:relative lg:inset-auto lg:ml-auto lg:flex lg:items-center lg:gap-2"
+          hidden
+          lg:relative lg:ml-auto lg:flex lg:items-center lg:gap-2"
         >
           <LocaleSwitcher />
           <Cta

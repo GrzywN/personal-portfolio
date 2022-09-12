@@ -15,6 +15,10 @@ function LocaleSwitcher() {
     setIsOpen((prevState) => !prevState);
   };
 
+  const itemClickHander = () => {
+    setIsOpen(false);
+  };
+
   return (
     <>
       <button
@@ -46,12 +50,14 @@ function LocaleSwitcher() {
               icon={iconFlagUnitedKingdom}
               alt="Flag of the United Kingdom"
               languageName="English"
+              clickHandler={itemClickHander}
             />
             <LocaleListItem
               locale="pl-PL"
               icon={iconFlagPoland}
               alt="Flaga Polski"
               languageName="Polski"
+              clickHandler={itemClickHander}
             />
           </motion.ul>
         )}
