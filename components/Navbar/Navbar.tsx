@@ -33,7 +33,7 @@ function Navbar({ content }: NavbarProps) {
           className="
           fixed bottom-6 right-6
           md:left-6
-          lg:relative lg:inset-0 lg:ml-auto lg:flex lg:items-center lg:gap-2"
+          lg:relative lg:inset-auto lg:ml-auto lg:flex lg:items-center lg:gap-2"
         >
           <LocaleSwitcher />
           <Cta
