@@ -16,9 +16,12 @@ function TextArea(props: TextAreaProps) {
   return (
     <textarea
       className={`${
-        error ? 'border-red-500' : 'border-gray-200 focus:border-gray-500'
+        error
+          ? 'border-red-500'
+          : 'border-gray-200 focus-visible:border-gray-500'
       }
-      h-32 w-full resize-none appearance-none rounded-md border bg-gray-200 py-3 px-4 leading-tight text-gray-700 transition-colors duration-400 focus:bg-white focus:outline-none`}
+      h-32 w-full resize-none appearance-none rounded-md border bg-gray-200 py-3 px-4 leading-tight text-gray-700 transition-colors duration-400
+      focus-visible:bg-white focus-visible:outline-offset-2`}
       value={value}
       onChange={onChange}
       onBlur={onBlur}

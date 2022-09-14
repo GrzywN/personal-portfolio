@@ -21,7 +21,7 @@ function AboutPage({ content, locale }: AboutPageProps) {
     <>
       <Meta title={`Karol Binkowski - ${title}`} locale={locale} />
       <Navbar content={navbar} />
-      <Container className="px-8 pt-48 lg:pb-48">
+      <Container className="bg-blog px-8 pt-48 lg:pb-48">
         <Section className="grid place-items-center" id="thank-you">
           <Article title={title} content={aboutContent} />
         </Section>

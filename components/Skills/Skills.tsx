@@ -28,7 +28,7 @@ function Skills({ content }: SkillsProps) {
   const { title, paragraph } = content.fields;
 
   return (
-    <section className="grid gap-24 px-8" title={title}>
+    <section className="grid place-items-center gap-24 px-8" title={title}>
       <header className="text-center">
         <h2
           className="
@@ -39,7 +39,7 @@ function Skills({ content }: SkillsProps) {
         </h2>
         <p
           className="
-          mx-auto mt-3 max-w-2xl text-sm text-gray-400 
+          mt-3 max-w-2xl text-sm text-gray-400 
           sm:mt-4 sm:text-base
           md:text-lg
           lg:text-xl"
@@ -49,9 +49,9 @@ function Skills({ content }: SkillsProps) {
       </header>
       <div
         className="
-        grid grid-cols-2 gap-y-8
-        md:grid-cols-3 md:gap-x-24
-        lg:grid-cols-4"
+        flex flex-wrap justify-around gap-8
+        md:max-w-md md:gap-x-16
+        lg:max-w-2xl lg:gap-x-24"
       >
         <GridItem src={iconHtml} name="HTML5" />
         <GridItem src={iconCss} name="CSS3" />

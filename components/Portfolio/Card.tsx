@@ -39,7 +39,8 @@ function Card({ generalContent, itemContent, reverseOrder }: CardProps) {
       <div
         className="
         flex w-full flex-col gap-4 text-start
-        md:gap-6 lg:gap-8"
+        md:gap-6
+        lg:gap-8"
       >
         <h3
           className="

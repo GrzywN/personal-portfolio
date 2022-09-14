@@ -36,7 +36,7 @@ function BlogPostPage({
           `}
           locale={locale}
         />
-        <Container className="px-8 pt-48 lg:pb-48">
+        <Container className="bg-blog px-8 pt-48 lg:pb-48">
           <Section>
             <ArticleSkeleton />
           </Section>
@@ -52,7 +52,7 @@ function BlogPostPage({
     <>
       <Meta title={title} locale={locale} />
       <Navbar content={navbar} />
-      <Container className="px-8 pt-48 lg:pb-48">
+      <Container className="bg-blog px-8 pt-48 lg:pb-48">
         <Section>
           <Article title={title} content={content} />
         </Section>

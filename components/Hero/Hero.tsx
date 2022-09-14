@@ -36,11 +36,13 @@ function Hero({ content }: HeroProps) {
         >
           <span className="text-white">{splitTitles[0]}</span>
           <br />
-          <span className="text-sky-blue">{splitTitles[1]}</span>
+          <span className="bg-gradient-to-r from-sky-500 to-sky-blue bg-clip-text text-transparent">
+            {splitTitles[1]}
+          </span>
         </h2>
         <p
           className="
-          max-w-[50ch] text-sm leading-relaxed text-gray-400 
+          max-w-[50ch] text-sm leading-relaxed text-gray-400
           md:text-lg"
         >
           {paragraph}
@@ -56,7 +58,8 @@ function Hero({ content }: HeroProps) {
       <div
         className="
         max-w-xs self-end p-4
-        md:max-w-none"
+        md:max-w-md
+        lg:max-w-none"
       >
         <Image src={imageWelcoming} alt="" />
       </div>

@@ -24,7 +24,8 @@ function About({ content }: AboutProps) {
       <div
         className="
         order-2 grid gap-4
-        md:gap-6 lg:gap-8 lg:p-0"
+        md:gap-6
+        lg:gap-8"
       >
         <h2
           className="
@@ -37,7 +38,7 @@ function About({ content }: AboutProps) {
         </h2>
         <p
           className="
-          grid max-w-[50ch] gap-4 text-sm leading-relaxed text-gray-400 
+          grid max-w-[50ch] gap-4 text-sm leading-relaxed text-gray-400
           md:text-lg
           lg:text-base"
         >
@@ -53,7 +54,14 @@ function About({ content }: AboutProps) {
           destination="/about"
         />
       </div>
-      <Image src={imageFeelingProud} alt="" />
+      <div
+        className="
+        max-w-xs
+        md:max-w-md
+        lg:max-w-none"
+      >
+        <Image src={imageFeelingProud} alt="" />
+      </div>
     </div>
   );
 }

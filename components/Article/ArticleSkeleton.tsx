@@ -5,10 +5,10 @@ function ArticleSkeleton() {
     <article
       className="
       prose-sm prose prose-invert 
-        prose-headings:animate-pulse prose-headings:text-center
-        prose-p:animate-pulse prose-p:rounded-full prose-p:bg-light-grey prose-p:text-transparent
-        prose-ul:grid prose-ul:list-none
-        prose-li:w-full
+      prose-headings:animate-pulse prose-headings:text-center
+      prose-p:animate-pulse prose-p:rounded-full prose-p:bg-light-grey prose-p:text-transparent
+      prose-ul:grid prose-ul:list-none
+      prose-li:w-full
       md:prose-base
       lg:prose-lg"
     >

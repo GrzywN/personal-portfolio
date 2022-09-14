@@ -13,8 +13,9 @@ function GitHubButton({ href, text }: GitHubButtonProps) {
     <a
       href={href}
       className="
-      inline-flex items-center gap-4 rounded-lg bg-dark-grey py-2 px-3 text-center text-sm font-medium text-white
-        transition-shadow duration-400 hover:shadow-xl focus-visible:shadow-xl"
+      inline-flex items-center gap-4 rounded-lg bg-dark-grey py-2 px-3
+        text-center text-sm font-medium text-white transition-shadow duration-400
+      hover:shadow-xl focus-visible:shadow-xl focus-visible:outline-offset-2"
     >
       <Image src={iconLogoGithub} width={24} height={24} alt="" />
       {text}

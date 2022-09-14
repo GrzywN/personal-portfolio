@@ -12,11 +12,10 @@ function Cta({ text, destination, className = '' }: CtaProps) {
     <Link href={destination} passHref>
       <a
         className={`${className} 
-        rounded border-2 border-sky-blue bg-sky-400 py-2 px-4 text-xs text-white
-        transition-colors duration-400  
-        hover:bg-transparent
-        focus-visible:bg-transparent
-        lg:text-sm`}
+        rounded border-2 border-sky-blue bg-sky-blue py-2 px-4
+          text-xs font-bold text-white transition-colors duration-400
+        hover:bg-transparent focus-visible:bg-transparent
+        md:text-base`}
       >
         {text}
       </a>

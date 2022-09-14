@@ -12,10 +12,7 @@ function Portfolio({ generalContent, itemsContent }: PortfolioProps) {
   const { title, paragraph } = generalContent.fields;
 
   return (
-    <div
-      className="
-      flex h-full flex-col items-center gap-16 px-8 py-32 text-center"
-    >
+    <div className="flex h-full flex-col items-center gap-16 px-8 py-32 text-center">
       <header
         className="
         grid gap-2

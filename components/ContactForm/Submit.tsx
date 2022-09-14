@@ -9,10 +9,9 @@ function Submit({ children }: SubmitProps) {
     <button
       type="submit"
       className="
-      mx-auto w-1/2 cursor-pointer rounded border-2 border-sky-blue bg-sky-blue py-2 px-4 font-medium text-white
-        transition-colors duration-400  
-        hover:bg-transparent
-        focus-visible:bg-transparent focus-visible:outline-none"
+      mx-auto w-1/2 cursor-pointer rounded border-2 border-sky-blue bg-sky-blue
+        py-2 px-4 font-bold text-white transition-colors duration-400
+      hover:bg-transparent focus-visible:bg-transparent focus-visible:outline-offset-2"
     >
       {children}
     </button>

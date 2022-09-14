@@ -30,8 +30,8 @@ function Article({ title, content }: ArticleProps) {
     <article
       className="
       prose-sm prose prose-invert
-        prose-headings:text-center prose-p:w-full prose-a:text-sky-blue prose-a:transition-colors hover:prose-a:text-white prose-img:rounded-md 
-      md:prose-base 
+      prose-headings:text-center prose-p:w-full prose-a:text-sky-blue prose-a:transition-colors hover:prose-a:text-white prose-img:rounded-md
+      md:prose-base
       lg:prose-lg"
     >
       <h1>{title}</h1>

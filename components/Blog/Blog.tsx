@@ -23,14 +23,14 @@ function Blog({ generalContent, blogPostContent }: BlogProps) {
       <header className="text-center">
         <h1
           className="
-          text-3xl font-extrabold tracking-tight text-white 
+          text-3xl font-extrabold tracking-tight text-white
           sm:text-4xl"
         >
           {title}
         </h1>
         <p
           className="
-          mx-auto mt-3 max-w-2xl text-sm text-gray-400 
+          mx-auto mt-3 max-w-2xl text-sm text-gray-400
           sm:mt-4 sm:text-base
           md:text-lg
           lg:text-xl"
@@ -47,7 +47,13 @@ function Blog({ generalContent, blogPostContent }: BlogProps) {
                   className="flex h-24 w-full items-center justify-between gap-4 rounded-md bg-light-grey py-4 px-6"
                   key={item.fields.slug}
                 >
-                  <span className="text-sm text-white sm:text-base md:text-lg lg:text-xl">
+                  <span
+                    className="
+                    text-sm text-white
+                    sm:text-base
+                    md:text-lg
+                    lg:text-xl"
+                  >
                     {item.fields.title}
                   </span>
                   <Cta destination={`/blog/${item.fields.slug}`} text={cta} />

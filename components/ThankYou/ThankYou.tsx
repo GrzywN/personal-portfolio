@@ -24,7 +24,7 @@ function ThankYou({ content }: ThankYouProps) {
         </h1>
         <p
           className="
-          mt-3 text-sm text-gray-400 
+          mt-3 text-sm text-gray-400
           sm:mt-4 sm:text-base
           md:text-lg
           lg:text-xl"
@@ -34,7 +34,7 @@ function ThankYou({ content }: ThankYouProps) {
         <Link href="/" passHref>
           <a
             className="
-            mt-6 text-sm text-white underline 
+            mt-6 text-sm text-white underline
             sm:text-base
             md:text-lg
             lg:text-xl"

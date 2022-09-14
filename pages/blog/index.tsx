@@ -22,7 +22,7 @@ function BlogPage({ content, locale }: BlogPageProps) {
     <>
       <Meta title={`Karol Binkowski - ${title}`} locale={locale} />
       <Navbar content={navbar} />
-      <Container>
+      <Container className="bg-blog">
         <Section id="blog">
           <Blog generalContent={sectionBlog} blogPostContent={blogPosts} />
         </Section>

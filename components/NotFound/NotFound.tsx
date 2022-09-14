@@ -26,14 +26,14 @@ function NotFound({ content }: NotFoundProps) {
       <header className="text-center">
         <h1
           className="
-          text-3xl font-extrabold tracking-tight text-white 
+          text-3xl font-extrabold tracking-tight text-white
           sm:text-4xl"
         >
           {title}
         </h1>
         <p
           className="
-          mt-3 text-sm text-gray-400 
+          mt-3 text-sm text-gray-400
           sm:mt-4 sm:text-base
           md:text-lg
           lg:text-xl"
@@ -43,7 +43,7 @@ function NotFound({ content }: NotFoundProps) {
         <Link href="/" passHref>
           <a
             className="
-            mt-3 text-sm text-white underline 
+            mt-3 text-sm text-white underline
             sm:text-base
             md:text-lg
             lg:text-xl"
@@ -52,7 +52,7 @@ function NotFound({ content }: NotFoundProps) {
           </a>
         </Link>
       </header>
-      <div className="max-w-[24rem]">
+      <div className="max-w-sm">
         <Image src={imageNotFound} alt="" />
       </div>
     </>

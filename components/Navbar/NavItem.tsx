@@ -14,8 +14,8 @@ function NavItem({ destination, onClick, index, title }: NavItemProps) {
       <Link href={destination} passHref>
         <a
           className="
-          cursor-pointer
-            transition-colors duration-400 hover:text-sky-blue focus-visible:text-sky-blue"
+          cursor-pointer transition-colors duration-400
+          hover:text-sky-blue focus-visible:text-sky-blue"
           onClick={onClick}
         >
           <span className="mr-1 font-rounded font-bold" aria-hidden="true">

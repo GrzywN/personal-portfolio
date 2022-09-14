@@ -35,14 +35,23 @@ function Home({ content, locale }: HomeProps) {
     <>
       <Meta title={`Karol Binkowski - ${title}`} locale={locale} />
       <Navbar content={navbar} />
-      <Container className="lg:bg-container lg:bg-no-repeat">
+      <Container className="bg-container bg-no-repeat">
         <Section id="hero">
           <Hero content={hero} />
         </Section>
-        <Section id="about" className="bg-about">
+        <Section
+          className="
+          before:absolute before:inset-x-0 before:-inset-y-16 before:border-y-4 before:border-light-grey before:bg-about before:opacity-75 before:content-['']
+          md:before:-inset-y-24
+          lg:before:-inset-y-32"
+          id="about"
+        >
           <About content={about} />
         </Section>
-        <Section id="skills">
+        <Section
+          className="before:absolute before:inset-x-0 before:-inset-y-16 before:-z-10 before:bg-skills before:content-['']"
+          id="skills"
+        >
           <Skills content={skills} />
         </Section>
         <Section id="portfolio" skew skewedBgClassName="bg-sky-blue">
