@@ -16,10 +16,7 @@ function Blog({ generalContent, blogPostContent }: BlogProps) {
   const { title, paragraph, cta } = generalContent.fields;
 
   return (
-    <section
-      className="grid w-full place-items-center gap-16 px-8"
-      title={title}
-    >
+    <section className="grid w-full place-items-center gap-16 px-8" title={title}>
       <header className="text-center">
         <h1
           className="

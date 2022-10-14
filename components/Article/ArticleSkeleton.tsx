@@ -15,35 +15,17 @@ function ArticleSkeleton() {
       <h1>Loading...</h1>
       <ul aria-hidden>
         <li>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo
-            perferendis
-          </p>
-          <p>
-            rem voluptatum voluptas aperiam repellendus, adipisci molestias
-            quaerat
-          </p>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo perferendis</p>
+          <p>rem voluptatum voluptas aperiam repellendus, adipisci molestias quaerat</p>
           <p>qui repellat eaque fugiat eveniet? Nemo, at.</p>
         </li>
         <li>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo
-            perferendis
-          </p>
-          <p>
-            rem voluptatum voluptas aperiam repellendus, adipisci molestias
-            quaerat
-          </p>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo perferendis</p>
+          <p>rem voluptatum voluptas aperiam repellendus, adipisci molestias quaerat</p>
         </li>
         <li>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo
-            perferendis
-          </p>
-          <p>
-            rem voluptatum voluptas aperiam repellendus, adipisci molestias
-            quaerat
-          </p>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo perferendis</p>
+          <p>rem voluptatum voluptas aperiam repellendus, adipisci molestias quaerat</p>
           <p>qui repellat eaque fugiat eveniet? Nemo, at.</p>
         </li>
       </ul>

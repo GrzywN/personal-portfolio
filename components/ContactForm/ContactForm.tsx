@@ -70,9 +70,7 @@ function ContactForm({ content }: ContactFormProps) {
           placeholder={fullNamePlaceholder}
           error={formik.touched.fullName! && !!formik.errors.fullName}
         />
-        <ErrorLabel>
-          {formik.touched.fullName && formik.errors.fullName}
-        </ErrorLabel>
+        <ErrorLabel>{formik.touched.fullName && formik.errors.fullName}</ErrorLabel>
       </div>
       <div className="relative">
         <Label htmlFor="email">{email}</Label>
@@ -99,16 +97,10 @@ function ContactForm({ content }: ContactFormProps) {
           placeholder={messagePlaceholder}
           error={formik.touched.message! && !!formik.errors.message}
         />
-        <ErrorLabel>
-          {formik.touched.message && formik.errors.message}
-        </ErrorLabel>
+        <ErrorLabel>{formik.touched.message && formik.errors.message}</ErrorLabel>
       </div>
       <div className="hidden">
-        <input
-          type="hidden"
-          name="_subject"
-          value="Personal Website: New submission!"
-        />
+        <input type="hidden" name="_subject" value="Personal Website: New submission!" />
         <input type="hidden" name="_template" value="table" />
         <input type="hidden" name="_next" value={thankYouUrl} />
       </div>

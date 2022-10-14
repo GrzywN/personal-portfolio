@@ -21,11 +21,7 @@ type BlogPostPageProps = {
   locale: LOCALE_CODE;
 };
 
-function BlogPostPage({
-  pageContent,
-  blogPostContent,
-  locale,
-}: BlogPostPageProps) {
+function BlogPostPage({ pageContent, blogPostContent, locale }: BlogPostPageProps) {
   if (pageContent == null || blogPostContent == null) {
     return (
       <>

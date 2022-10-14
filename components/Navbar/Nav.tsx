@@ -27,30 +27,10 @@ function Nav({ onClick, isOpen, content }: NavProps) {
         sm:text-2xl 
         lg:flex-row lg:text-sm"
       >
-        <NavItem
-          onClick={onClick}
-          title={about}
-          destination="/#about"
-          index="01"
-        />
-        <NavItem
-          onClick={onClick}
-          title={skills}
-          destination="/#skills"
-          index="02"
-        />
-        <NavItem
-          onClick={onClick}
-          title={portfolio}
-          destination="/#portfolio"
-          index="03"
-        />
-        <NavItem
-          onClick={onClick}
-          title={blog}
-          destination="/blog#blog"
-          index="04"
-        />
+        <NavItem onClick={onClick} title={about} destination="/#about" index="01" />
+        <NavItem onClick={onClick} title={skills} destination="/#skills" index="02" />
+        <NavItem onClick={onClick} title={portfolio} destination="/#portfolio" index="03" />
+        <NavItem onClick={onClick} title={blog} destination="/blog#blog" index="04" />
       </ul>
     </nav>
   );

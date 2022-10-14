@@ -1,9 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
-import {
-  documentToReactComponents,
-  CommonNode,
-} from '@contentful/rich-text-react-renderer';
+import { documentToReactComponents, CommonNode } from '@contentful/rich-text-react-renderer';
 import { BLOCKS, Document } from '@contentful/rich-text-types';
 
 const renderOption = {

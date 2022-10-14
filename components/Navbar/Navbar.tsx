@@ -47,13 +47,7 @@ function Navbar({ content }: NavbarProps) {
           className="
           lg:hidden"
         >
-          <Hamburger
-            rounded
-            color="white"
-            toggled={isOpen}
-            toggle={setIsOpen}
-            label="Show menu"
-          />
+          <Hamburger rounded color="white" toggled={isOpen} toggle={setIsOpen} label="Show menu" />
         </div>
       </div>
     </header>

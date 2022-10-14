@@ -7,16 +7,7 @@ type GridItemProps = {
 };
 
 function GridItem({ src, name }: GridItemProps) {
-  return (
-    <Image
-      src={src}
-      title={name}
-      alt={name}
-      width={80}
-      height={80}
-      objectFit="contain"
-    />
-  );
+  return <Image src={src} title={name} alt={name} width={80} height={80} objectFit="contain" />;
 }
 
 export default GridItem;

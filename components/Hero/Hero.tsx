@@ -2,7 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 import { IHero } from '../../types/generated/contentful';
 
-import Cta from '../Cta';
+import Cta, { CtaVariants } from '../Cta';
 
 import imageWelcoming from '../../public/illustrations/welcoming.svg';
 
@@ -11,7 +11,7 @@ type HeroProps = {
 };
 
 function Hero({ content }: HeroProps) {
-  const { title, paragraph, cta } = content.fields;
+  const { title, paragraph, ctaWork, ctaAbout } = content.fields;
   const splitTitles = title.split('.', 2).map((e) => `${e.trim()}.`);
 
   return (
@@ -47,13 +47,23 @@ function Hero({ content }: HeroProps) {
         >
           {paragraph}
         </p>
-        <Cta
-          className="
-          mx-auto w-fit
-          lg:mx-0"
-          destination="#contact"
-          text={cta}
-        />
+        <div className="flex items-center gap-4">
+          <Cta
+            className="
+            mx-auto w-fit
+            lg:mx-0"
+            destination="#portfolio"
+            text={ctaWork}
+          />
+          <Cta
+            className="
+            mx-auto w-fit
+            lg:mx-0"
+            destination="#about"
+            text={ctaAbout}
+            variant={CtaVariants.subtle}
+          />
+        </div>
       </div>
       <div
         className="

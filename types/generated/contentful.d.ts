@@ -167,8 +167,11 @@ export interface IHeroFields {
   /** paragraph */
   paragraph: string;
 
-  /** cta */
-  cta: string;
+  /** ctaWork */
+  ctaWork: string;
+
+  /** ctaAbout */
+  ctaAbout: string;
 }
 
 export interface IHero extends Entry<IHeroFields> {

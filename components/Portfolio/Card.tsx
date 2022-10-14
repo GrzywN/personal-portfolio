@@ -12,8 +12,7 @@ type CardProps = {
 };
 
 function Card({ generalContent, itemContent, reverseOrder }: CardProps) {
-  const { title, paragraph, image, demoUrl, sourceUrl, technologiesUsed } =
-    itemContent.fields;
+  const { title, paragraph, image, demoUrl, sourceUrl, technologiesUsed } = itemContent.fields;
   const { demo, source } = generalContent.fields;
 
   const imageSrc = `https:${image.fields.file.url}`;

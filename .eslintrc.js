@@ -37,5 +37,11 @@ module.exports = {
     'jsx-a11y/no-static-element-interactions': 'off',
     '@typescript-eslint/no-shadow': ['error'],
     '@typescript-eslint/no-unused-vars': ['error'],
+    'prettier/prettier': [
+      'error',
+      {
+        printWidth: 100,
+      },
+    ],
   },
 };

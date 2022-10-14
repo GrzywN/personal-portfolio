@@ -19,17 +19,8 @@ type HomeProps = {
 };
 
 function Home({ content, locale }: HomeProps) {
-  const {
-    title,
-    navbar,
-    hero,
-    about,
-    skills,
-    portfolio,
-    portfolioItems,
-    contact,
-    footer,
-  } = content.fields;
+  const { title, navbar, hero, about, skills, portfolio, portfolioItems, contact, footer } =
+    content.fields;
 
   return (
     <>

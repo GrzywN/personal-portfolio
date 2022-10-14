@@ -8,13 +8,7 @@ type SectionProps = {
   id?: string;
 };
 
-function Section({
-  className,
-  children,
-  skew,
-  skewedBgClassName,
-  id,
-}: SectionProps) {
+function Section({ className, children, skew, skewedBgClassName, id }: SectionProps) {
   const skewClasses = skew ? `-skew-y-6 ${skewedBgClassName}` : '';
 
   return (
