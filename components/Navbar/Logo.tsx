@@ -10,7 +10,7 @@ function Logo({ onClick }: LogoProps) {
     <Link href="/#hero" passHref>
       <a
         className="
-        cursor-pointer text-white transition-colors duration-400
+        cursor-pointer text-white transition-colors duration-300
         hover:text-sky-blue focus-visible:text-sky-blue"
         onClick={onClick}
       >

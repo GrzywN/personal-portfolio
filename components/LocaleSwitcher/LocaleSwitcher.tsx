@@ -23,7 +23,7 @@ function LocaleSwitcher() {
     <>
       <button
         className="
-        grid h-8 w-8 place-items-center rounded bg-white shadow-2xl transition-colors duration-400
+        grid h-8 w-8 place-items-center rounded bg-white shadow-2xl transition-colors duration-300
         hover:bg-gray-300
         sm:h-9 sm:w-9
         md:h-11 md:w-11"

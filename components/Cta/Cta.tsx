@@ -1,9 +1,10 @@
 import React from 'react';
 import Link from 'next/link';
+import { motion } from 'framer-motion';
 
 enum CtaVariants {
   filled,
-  subtle,
+  outline,
 }
 
 type CtaProps = {
@@ -11,33 +12,48 @@ type CtaProps = {
   destination: string;
   className?: string;
   variant?: CtaVariants;
+  animateScale?: boolean;
 };
 
-function Cta({ text, destination, className = '', variant = CtaVariants.filled }: CtaProps) {
+function Cta({
+  text,
+  destination,
+  className = '',
+  variant = CtaVariants.filled,
+  animateScale = true,
+}: CtaProps) {
   const variants = {
     [CtaVariants.filled]: (
       <Link href={destination} passHref>
-        <a
+        <motion.a
           className={`${className} 
-          rounded border-2 border-sky-blue bg-sky-blue py-2 px-4
-          text-xs font-bold text-white transition-colors duration-400
-          hover:bg-transparent focus-visible:bg-transparent
+          ${
+            animateScale ||
+            'transition-colors duration-300 hover:bg-transparent focus-visible:bg-transparent'
+          }
+          rounded border-2 border-sky-blue bg-sky-blue
+           py-2 px-4 text-xs font-bold text-white
           md:text-base`}
+          whileHover={animateScale ? { scale: 1.1 } : {}}
+          whileFocus={animateScale ? { scale: 1.1 } : {}}
+          whileTap={animateScale ? { scale: 0.9 } : {}}
         >
           {text}
-        </a>
+        </motion.a>
       </Link>
     ),
-    [CtaVariants.subtle]: (
+    [CtaVariants.outline]: (
       <Link href={destination} passHref>
-        <a
+        <motion.a
           className={`${className} 
-          py-2 px-4 text-xs text-white transition-colors duration-400
-          hover:text-white/75 focus-visible:text-white/75
+          rounded border-2 border-sky-blue py-2 px-4 text-xs font-bold text-white
           md:text-base`}
+          whileHover={animateScale ? { scale: 1.1 } : {}}
+          whileFocus={animateScale ? { scale: 1.1 } : {}}
+          whileTap={animateScale ? { scale: 0.9 } : {}}
         >
           {text}
-        </a>
+        </motion.a>
       </Link>
     ),
   };

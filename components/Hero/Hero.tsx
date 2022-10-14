@@ -47,21 +47,17 @@ function Hero({ content }: HeroProps) {
         >
           {paragraph}
         </p>
-        <div className="flex items-center gap-4">
+        <div
+          className="
+          mx-auto flex items-center gap-4
+          lg:mx-0"
+        >
+          <Cta className="w-fit" destination="#portfolio" text={ctaWork} />
           <Cta
-            className="
-            mx-auto w-fit
-            lg:mx-0"
-            destination="#portfolio"
-            text={ctaWork}
-          />
-          <Cta
-            className="
-            mx-auto w-fit
-            lg:mx-0"
+            className="w-fit"
             destination="#about"
             text={ctaAbout}
-            variant={CtaVariants.subtle}
+            variant={CtaVariants.outline}
           />
         </div>
       </div>

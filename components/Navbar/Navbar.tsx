@@ -41,6 +41,7 @@ function Navbar({ content }: NavbarProps) {
             lg:inline"
             destination="/#contact"
             text={cta}
+            animateScale={false}
           />
         </div>
         <div

@@ -14,7 +14,7 @@ function SocialListItem({ href, title, logo, alt }: SocialListItemProps) {
       <a href={href} title={title} target="_blank" rel="noopener noreferrer">
         <Image
           className="
-          transition-transform duration-400
+          transition-transform duration-300
           hover:scale-110 focus-visible:scale-110"
           src={logo}
           alt={alt}

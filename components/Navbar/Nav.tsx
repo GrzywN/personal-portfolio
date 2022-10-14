@@ -17,7 +17,7 @@ function Nav({ onClick, isOpen, content }: NavProps) {
       className={`
       ${isOpen ? 'scale-x-100 opacity-100' : 'scale-x-0 opacity-0'} 
       absolute left-1/2 -bottom-8 grid h-[calc(100vh-9rem)] w-full max-w-[calc(100vw-4rem)]
-        -translate-x-1/2 translate-y-full place-items-center rounded-md bg-light-grey/90 duration-400 ease-in-out
+        -translate-x-1/2 translate-y-full place-items-center rounded-md bg-light-grey/90 duration-300 ease-in-out
       lg:static lg:ml-8 lg:h-auto lg:w-auto lg:scale-x-100 lg:transform-none lg:bg-transparent lg:opacity-100 lg:transition-none`}
       id="primary-navigation"
     >
