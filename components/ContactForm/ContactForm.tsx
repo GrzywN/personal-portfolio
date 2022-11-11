@@ -15,8 +15,8 @@ type ContactFormProps = {
 
 function ContactForm({ content }: ContactFormProps) {
   const {
-    fullName,
-    fullNamePlaceholder,
+    name,
+    namePlaceholder,
     email,
     emailPlaceholder,
     message,
@@ -29,7 +29,7 @@ function ContactForm({ content }: ContactFormProps) {
 
   const formik = useFormik({
     initialValues: {
-      fullName: '',
+      name: '',
       email: '',
       message: '',
     },
@@ -51,7 +51,7 @@ function ContactForm({ content }: ContactFormProps) {
       onSubmit={(event) => {
         if (
           !formik.isValid ||
-          formik.values.fullName === '' ||
+          formik.values.name === '' ||
           formik.values.email === '' ||
           formik.values.message === ''
         ) {
@@ -60,28 +60,31 @@ function ContactForm({ content }: ContactFormProps) {
       }}
     >
       <div className="relative">
-        <Label htmlFor="fullName">{fullName}</Label>
+        <Label htmlFor="name">{name}</Label>
         <Input
-          value={formik.values.fullName}
+          type="text"
+          id="name"
+          name="name"
+          autoComplete="name"
+          placeholder={namePlaceholder}
+          value={formik.values.name}
           onChange={formik.handleChange}
           onBlur={formik.handleBlur}
-          id="fullName"
-          name="fullName"
-          placeholder={fullNamePlaceholder}
-          error={formik.touched.fullName! && !!formik.errors.fullName}
+          error={formik.touched.name! && !!formik.errors.name}
         />
-        <ErrorLabel>{formik.touched.fullName && formik.errors.fullName}</ErrorLabel>
+        <ErrorLabel>{formik.touched.name && formik.errors.name}</ErrorLabel>
       </div>
       <div className="relative">
         <Label htmlFor="email">{email}</Label>
         <Input
+          type="email"
+          id="email"
+          name="email"
+          autoComplete="name"
+          placeholder={emailPlaceholder}
           value={formik.values.email}
           onChange={formik.handleChange}
           onBlur={formik.handleBlur}
-          id="email"
-          name="email"
-          type="email"
-          placeholder={emailPlaceholder}
           error={formik.touched.email! && !!formik.errors.email}
         />
         <ErrorLabel>{formik.touched.email && formik.errors.email}</ErrorLabel>
@@ -89,12 +92,12 @@ function ContactForm({ content }: ContactFormProps) {
       <div className="relative">
         <Label htmlFor="message">{message}</Label>
         <TextArea
-          value={formik.values.message}
-          onChange={formik.handleChange}
-          onBlur={formik.handleBlur}
           id="message"
           name="message"
           placeholder={messagePlaceholder}
+          value={formik.values.message}
+          onChange={formik.handleChange}
+          onBlur={formik.handleBlur}
           error={formik.touched.message! && !!formik.errors.message}
         />
         <ErrorLabel>{formik.touched.message && formik.errors.message}</ErrorLabel>

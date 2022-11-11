@@ -63,11 +63,11 @@ export interface IContactFields {
   /** title */
   title: string;
 
-  /** fullName */
-  fullName: string;
+  /** name */
+  name: string;
 
-  /** fullNamePlaceholder */
-  fullNamePlaceholder: string;
+  /** namePlaceholder */
+  namePlaceholder: string;
 
   /** email */
   email: string;
