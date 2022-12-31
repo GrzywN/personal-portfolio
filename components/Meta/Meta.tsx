@@ -14,7 +14,7 @@ function Meta({ title, locale }: MetaProps) {
         <>
           <meta
             name="description"
-            content="I am a web developer with a passion for building user-friendly applications. I am currently looking for nice people to work with and learn a lot from."
+            content="I am a web developer with a genuine passion for developing aesthetically pleasing and user-friendly applications. I am currently seeking for nice people to work with and from whom I can learn a lot."
           />
           <meta name="language" content="English" />
         </>
@@ -23,16 +23,16 @@ function Meta({ title, locale }: MetaProps) {
         <>
           <meta
             name="description"
-            content="Jestem programistą z pasją do tworzenia przyjaznych dla użytkownika aplikacji. Obecnie szukam ludzi od których mógłbym się wiele nauczyć."
+            content="Jestem web developerem z prawdziwą pasją do tworzenia estetycznych i przyjaznych dla użytkownika aplikacji. Obecnie szukam miłych ludzi, z którymi mógłbym współpracować i od których mógłbym się wiele nauczyć."
           />
           <meta name="language" content="Polish" />
         </>
       )}
       <meta
         name="keywords"
-        content="web, developer, dev, applications, apps, portfolio, projects, IT, programista, aplikacje, internetowe, projekty, karol, binkowski"
+        content="karol, binkowski, frontend, front, end, web, developer, dev, applications, apps, portfolio, projects, IT, programista, aplikacje, internetowe, projekty"
       />
-      <meta name="title" content="Karol Binkowski" />
+      <meta name="title" content="Karol Binkowski | Front-end developer" />
       <meta name="author" content="Karol Binkowski" />
       <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
